@@ -1,0 +1,252 @@
+{
+  "genere_le": "2026-08-01T08:14:43+00:00",
+  "version_jeu_evaluation": "1.0.0",
+  "etape": "2 - jeu d'evaluation",
+  "nombre_total_de_questions": 24,
+  "par_type": {
+    "semantic": 6,
+    "relational": 6,
+    "hybrid": 6,
+    "out_of_context": 6
+  },
+  "par_difficulte": {
+    "easy": 8,
+    "medium": 8,
+    "hard": 8
+  },
+  "par_split": {
+    "train": 16,
+    "test": 8
+  },
+  "par_route_attendue": {
+    "use_vector": 6,
+    "use_graph": 6,
+    "use_hybrid": 6,
+    "abstain": 6
+  },
+  "questions_avec_preuve": 18,
+  "questions_sans_page_pertinente": 6,
+  "questions_repondables": 18,
+  "pages_differentes_couvertes": 15,
+  "liste_pages_pdf_couvertes": [
+    19,
+    21,
+    22,
+    23,
+    30,
+    31,
+    45,
+    53,
+    69,
+    70,
+    87,
+    95,
+    96,
+    122,
+    123
+  ],
+  "chapitres_couverts": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "nombre_de_chapitres_couverts": 5,
+  "doublons_detectes": [],
+  "erreurs_de_pagination": [],
+  "hors_contexte_par_origine": {
+    "annex_b": 3,
+    "unrelated": 3
+  },
+  "controle_cross_lingue": {
+    "modele": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "seuil_avertissement": 0.4,
+    "questions_mesurees": 18,
+    "average_positive_evidence_similarity": 0.559,
+    "minimum_positive_evidence_similarity": 0.2597,
+    "maximum_positive_evidence_similarity": 0.7753,
+    "questions_with_similarity_warning": [
+      {
+        "question_id": "SEM_002",
+        "max_similarity": 0.3859,
+        "message": "similarite faible entre la question et ses preuves : annotation conservee, a relire humainement"
+      }
+    ],
+    "detail": [
+      {
+        "question_id": "SEM_001",
+        "similarities": [
+          0.7128
+        ],
+        "mean": 0.7128,
+        "max": 0.7128
+      },
+      {
+        "question_id": "SEM_002",
+        "similarities": [
+          0.3859,
+          0.1334
+        ],
+        "mean": 0.2597,
+        "max": 0.3859
+      },
+      {
+        "question_id": "SEM_003",
+        "similarities": [
+          0.6469,
+          0.235
+        ],
+        "mean": 0.441,
+        "max": 0.6469
+      },
+      {
+        "question_id": "SEM_004",
+        "similarities": [
+          0.4712,
+          0.4904
+        ],
+        "mean": 0.4808,
+        "max": 0.4904
+      },
+      {
+        "question_id": "SEM_005",
+        "similarities": [
+          0.6896,
+          0.5842,
+          0.4505
+        ],
+        "mean": 0.5748,
+        "max": 0.6896
+      },
+      {
+        "question_id": "SEM_006",
+        "similarities": [
+          0.3525,
+          0.4574,
+          0.5967
+        ],
+        "mean": 0.4689,
+        "max": 0.5967
+      },
+      {
+        "question_id": "REL_001",
+        "similarities": [
+          0.6885,
+          0.6167
+        ],
+        "mean": 0.6526,
+        "max": 0.6885
+      },
+      {
+        "question_id": "REL_002",
+        "similarities": [
+          0.7038
+        ],
+        "mean": 0.7038,
+        "max": 0.7038
+      },
+      {
+        "question_id": "REL_003",
+        "similarities": [
+          0.5829
+        ],
+        "mean": 0.5829,
+        "max": 0.5829
+      },
+      {
+        "question_id": "REL_004",
+        "similarities": [
+          0.617
+        ],
+        "mean": 0.617,
+        "max": 0.617
+      },
+      {
+        "question_id": "REL_005",
+        "similarities": [
+          0.7669
+        ],
+        "mean": 0.7669,
+        "max": 0.7669
+      },
+      {
+        "question_id": "REL_006",
+        "similarities": [
+          0.7753
+        ],
+        "mean": 0.7753,
+        "max": 0.7753
+      },
+      {
+        "question_id": "HYB_001",
+        "similarities": [
+          0.7083,
+          0.1928,
+          0.5432
+        ],
+        "mean": 0.4815,
+        "max": 0.7083
+      },
+      {
+        "question_id": "HYB_002",
+        "similarities": [
+          0.6512,
+          0.5065
+        ],
+        "mean": 0.5788,
+        "max": 0.6512
+      },
+      {
+        "question_id": "HYB_003",
+        "similarities": [
+          0.5942,
+          0.3094,
+          0.4558
+        ],
+        "mean": 0.4531,
+        "max": 0.5942
+      },
+      {
+        "question_id": "HYB_004",
+        "similarities": [
+          0.4086,
+          0.3332
+        ],
+        "mean": 0.3709,
+        "max": 0.4086
+      },
+      {
+        "question_id": "HYB_005",
+        "similarities": [
+          0.7106,
+          0.6536,
+          0.6895,
+          0.6804
+        ],
+        "mean": 0.6835,
+        "max": 0.7106
+      },
+      {
+        "question_id": "HYB_006",
+        "similarities": [
+          0.5295,
+          0.3933,
+          0.4491
+        ],
+        "mean": 0.4573,
+        "max": 0.5295
+      }
+    ]
+  },
+  "average_positive_evidence_similarity": 0.559,
+  "minimum_positive_evidence_similarity": 0.2597,
+  "maximum_positive_evidence_similarity": 0.7753,
+  "questions_with_similarity_warning": [
+    {
+      "question_id": "SEM_002",
+      "max_similarity": 0.3859,
+      "message": "similarite faible entre la question et ses preuves : annotation conservee, a relire humainement"
+    }
+  ]
+}

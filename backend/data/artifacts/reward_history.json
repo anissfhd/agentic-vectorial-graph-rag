@@ -1,0 +1,1126 @@
+{
+  "computed_at": "2026-08-01T09:11:38.838258+00:00",
+  "epochs": 160,
+  "history": [
+    {
+      "epoch": 1,
+      "epsilon": 0.3,
+      "mean_reward": 0.825,
+      "cumulative_reward": 13.2,
+      "routing_accuracy": 0.5
+    },
+    {
+      "epoch": 2,
+      "epsilon": 0.294393,
+      "mean_reward": 1.25625,
+      "cumulative_reward": 20.1,
+      "routing_accuracy": 0.625
+    },
+    {
+      "epoch": 3,
+      "epsilon": 0.28889,
+      "mean_reward": 1.06875,
+      "cumulative_reward": 17.1,
+      "routing_accuracy": 0.6875
+    },
+    {
+      "epoch": 4,
+      "epsilon": 0.283491,
+      "mean_reward": 1.03125,
+      "cumulative_reward": 16.5,
+      "routing_accuracy": 0.75
+    },
+    {
+      "epoch": 5,
+      "epsilon": 0.278192,
+      "mean_reward": 0.94375,
+      "cumulative_reward": 15.1,
+      "routing_accuracy": 0.625
+    },
+    {
+      "epoch": 6,
+      "epsilon": 0.272992,
+      "mean_reward": 1.61875,
+      "cumulative_reward": 25.9,
+      "routing_accuracy": 0.8125
+    },
+    {
+      "epoch": 7,
+      "epsilon": 0.26789,
+      "mean_reward": 1.34375,
+      "cumulative_reward": 21.5,
+      "routing_accuracy": 0.8125
+    },
+    {
+      "epoch": 8,
+      "epsilon": 0.262882,
+      "mean_reward": 1.50625,
+      "cumulative_reward": 24.1,
+      "routing_accuracy": 0.8125
+    },
+    {
+      "epoch": 9,
+      "epsilon": 0.257969,
+      "mean_reward": 1.2125,
+      "cumulative_reward": 19.4,
+      "routing_accuracy": 0.6875
+    },
+    {
+      "epoch": 10,
+      "epsilon": 0.253147,
+      "mean_reward": 1.76875,
+      "cumulative_reward": 28.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 11,
+      "epsilon": 0.248416,
+      "mean_reward": 1.9125,
+      "cumulative_reward": 30.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 12,
+      "epsilon": 0.243772,
+      "mean_reward": 1.34375,
+      "cumulative_reward": 21.5,
+      "routing_accuracy": 0.8125
+    },
+    {
+      "epoch": 13,
+      "epsilon": 0.239216,
+      "mean_reward": 0.98125,
+      "cumulative_reward": 15.7,
+      "routing_accuracy": 0.5625
+    },
+    {
+      "epoch": 14,
+      "epsilon": 0.234745,
+      "mean_reward": 1.03125,
+      "cumulative_reward": 16.5,
+      "routing_accuracy": 0.75
+    },
+    {
+      "epoch": 15,
+      "epsilon": 0.230357,
+      "mean_reward": 1.5375,
+      "cumulative_reward": 24.6,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 16,
+      "epsilon": 0.226052,
+      "mean_reward": 1.0875,
+      "cumulative_reward": 17.4,
+      "routing_accuracy": 0.6875
+    },
+    {
+      "epoch": 17,
+      "epsilon": 0.221827,
+      "mean_reward": 1.875,
+      "cumulative_reward": 30.0,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 18,
+      "epsilon": 0.21768,
+      "mean_reward": 1.5,
+      "cumulative_reward": 24.0,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 19,
+      "epsilon": 0.213612,
+      "mean_reward": 1.875,
+      "cumulative_reward": 30.0,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 20,
+      "epsilon": 0.209619,
+      "mean_reward": 1.75,
+      "cumulative_reward": 28.0,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 21,
+      "epsilon": 0.205701,
+      "mean_reward": 1.625,
+      "cumulative_reward": 26.0,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 22,
+      "epsilon": 0.201856,
+      "mean_reward": 1.5,
+      "cumulative_reward": 24.0,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 23,
+      "epsilon": 0.198083,
+      "mean_reward": 1.71875,
+      "cumulative_reward": 27.5,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 24,
+      "epsilon": 0.194381,
+      "mean_reward": 1.7375,
+      "cumulative_reward": 27.8,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 25,
+      "epsilon": 0.190748,
+      "mean_reward": 1.88125,
+      "cumulative_reward": 30.1,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 26,
+      "epsilon": 0.187183,
+      "mean_reward": 1.5375,
+      "cumulative_reward": 24.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 27,
+      "epsilon": 0.183684,
+      "mean_reward": 1.49375,
+      "cumulative_reward": 23.9,
+      "routing_accuracy": 0.8125
+    },
+    {
+      "epoch": 28,
+      "epsilon": 0.180251,
+      "mean_reward": 2.0375,
+      "cumulative_reward": 32.6,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 29,
+      "epsilon": 0.176882,
+      "mean_reward": 1.4875,
+      "cumulative_reward": 23.8,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 30,
+      "epsilon": 0.173576,
+      "mean_reward": 1.75,
+      "cumulative_reward": 28.0,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 31,
+      "epsilon": 0.170331,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 32,
+      "epsilon": 0.167148,
+      "mean_reward": 1.175,
+      "cumulative_reward": 18.8,
+      "routing_accuracy": 0.6875
+    },
+    {
+      "epoch": 33,
+      "epsilon": 0.164023,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 34,
+      "epsilon": 0.160958,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 35,
+      "epsilon": 0.157949,
+      "mean_reward": 1.08125,
+      "cumulative_reward": 17.3,
+      "routing_accuracy": 0.75
+    },
+    {
+      "epoch": 36,
+      "epsilon": 0.154997,
+      "mean_reward": 1.4625,
+      "cumulative_reward": 23.4,
+      "routing_accuracy": 0.75
+    },
+    {
+      "epoch": 37,
+      "epsilon": 0.1521,
+      "mean_reward": 1.925,
+      "cumulative_reward": 30.8,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 38,
+      "epsilon": 0.149257,
+      "mean_reward": 1.59375,
+      "cumulative_reward": 25.5,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 39,
+      "epsilon": 0.146467,
+      "mean_reward": 1.4875,
+      "cumulative_reward": 23.8,
+      "routing_accuracy": 0.8125
+    },
+    {
+      "epoch": 40,
+      "epsilon": 0.14373,
+      "mean_reward": 1.925,
+      "cumulative_reward": 30.8,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 41,
+      "epsilon": 0.141043,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 42,
+      "epsilon": 0.138407,
+      "mean_reward": 1.64375,
+      "cumulative_reward": 26.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 43,
+      "epsilon": 0.13582,
+      "mean_reward": 1.4375,
+      "cumulative_reward": 23.0,
+      "routing_accuracy": 0.75
+    },
+    {
+      "epoch": 44,
+      "epsilon": 0.133281,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 45,
+      "epsilon": 0.13079,
+      "mean_reward": 1.8625,
+      "cumulative_reward": 29.8,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 46,
+      "epsilon": 0.128346,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 47,
+      "epsilon": 0.125947,
+      "mean_reward": 1.4125,
+      "cumulative_reward": 22.6,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 48,
+      "epsilon": 0.123593,
+      "mean_reward": 1.49375,
+      "cumulative_reward": 23.9,
+      "routing_accuracy": 0.8125
+    },
+    {
+      "epoch": 49,
+      "epsilon": 0.121282,
+      "mean_reward": 2.1625,
+      "cumulative_reward": 34.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 50,
+      "epsilon": 0.119016,
+      "mean_reward": 1.625,
+      "cumulative_reward": 26.0,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 51,
+      "epsilon": 0.116791,
+      "mean_reward": 2.125,
+      "cumulative_reward": 34.0,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 52,
+      "epsilon": 0.114608,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 53,
+      "epsilon": 0.112466,
+      "mean_reward": 1.89375,
+      "cumulative_reward": 30.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 54,
+      "epsilon": 0.110364,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 55,
+      "epsilon": 0.108301,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 56,
+      "epsilon": 0.106277,
+      "mean_reward": 1.925,
+      "cumulative_reward": 30.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 57,
+      "epsilon": 0.10429,
+      "mean_reward": 1.875,
+      "cumulative_reward": 30.0,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 58,
+      "epsilon": 0.102341,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 59,
+      "epsilon": 0.100428,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 60,
+      "epsilon": 0.098551,
+      "mean_reward": 1.78125,
+      "cumulative_reward": 28.5,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 61,
+      "epsilon": 0.096709,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 62,
+      "epsilon": 0.094901,
+      "mean_reward": 1.55,
+      "cumulative_reward": 24.8,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 63,
+      "epsilon": 0.093128,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 64,
+      "epsilon": 0.091387,
+      "mean_reward": 1.64375,
+      "cumulative_reward": 26.3,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 65,
+      "epsilon": 0.089679,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 66,
+      "epsilon": 0.088003,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 67,
+      "epsilon": 0.086358,
+      "mean_reward": 1.89375,
+      "cumulative_reward": 30.3,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 68,
+      "epsilon": 0.084744,
+      "mean_reward": 2.14375,
+      "cumulative_reward": 34.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 69,
+      "epsilon": 0.08316,
+      "mean_reward": 1.875,
+      "cumulative_reward": 30.0,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 70,
+      "epsilon": 0.081605,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 71,
+      "epsilon": 0.08008,
+      "mean_reward": 2.00625,
+      "cumulative_reward": 32.1,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 72,
+      "epsilon": 0.078583,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 73,
+      "epsilon": 0.077115,
+      "mean_reward": 2.1625,
+      "cumulative_reward": 34.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 74,
+      "epsilon": 0.075673,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 75,
+      "epsilon": 0.074259,
+      "mean_reward": 1.9,
+      "cumulative_reward": 30.4,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 76,
+      "epsilon": 0.072871,
+      "mean_reward": 1.51875,
+      "cumulative_reward": 24.3,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 77,
+      "epsilon": 0.071509,
+      "mean_reward": 2.1625,
+      "cumulative_reward": 34.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 78,
+      "epsilon": 0.070172,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 79,
+      "epsilon": 0.068861,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 80,
+      "epsilon": 0.067574,
+      "mean_reward": 1.75,
+      "cumulative_reward": 28.0,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 81,
+      "epsilon": 0.066311,
+      "mean_reward": 1.875,
+      "cumulative_reward": 30.0,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 82,
+      "epsilon": 0.065071,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 83,
+      "epsilon": 0.063855,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 84,
+      "epsilon": 0.062661,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 85,
+      "epsilon": 0.06149,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 86,
+      "epsilon": 0.060341,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 87,
+      "epsilon": 0.059213,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 88,
+      "epsilon": 0.058106,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 89,
+      "epsilon": 0.05702,
+      "mean_reward": 1.925,
+      "cumulative_reward": 30.8,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 90,
+      "epsilon": 0.055954,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 91,
+      "epsilon": 0.054909,
+      "mean_reward": 1.75,
+      "cumulative_reward": 28.0,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 92,
+      "epsilon": 0.053882,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 93,
+      "epsilon": 0.052875,
+      "mean_reward": 2.125,
+      "cumulative_reward": 34.0,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 94,
+      "epsilon": 0.051887,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 95,
+      "epsilon": 0.050917,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 96,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 97,
+      "epsilon": 0.05,
+      "mean_reward": 1.75,
+      "cumulative_reward": 28.0,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 98,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 99,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 100,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 101,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 102,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 103,
+      "epsilon": 0.05,
+      "mean_reward": 2.03125,
+      "cumulative_reward": 32.5,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 104,
+      "epsilon": 0.05,
+      "mean_reward": 2.03125,
+      "cumulative_reward": 32.5,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 105,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 106,
+      "epsilon": 0.05,
+      "mean_reward": 2.0,
+      "cumulative_reward": 32.0,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 107,
+      "epsilon": 0.05,
+      "mean_reward": 1.9875,
+      "cumulative_reward": 31.8,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 108,
+      "epsilon": 0.05,
+      "mean_reward": 1.8,
+      "cumulative_reward": 28.8,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 109,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 110,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 111,
+      "epsilon": 0.05,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 112,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 113,
+      "epsilon": 0.05,
+      "mean_reward": 2.14375,
+      "cumulative_reward": 34.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 114,
+      "epsilon": 0.05,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 115,
+      "epsilon": 0.05,
+      "mean_reward": 2.1625,
+      "cumulative_reward": 34.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 116,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 117,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 118,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 119,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 120,
+      "epsilon": 0.05,
+      "mean_reward": 1.7,
+      "cumulative_reward": 27.2,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 121,
+      "epsilon": 0.05,
+      "mean_reward": 2.14375,
+      "cumulative_reward": 34.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 122,
+      "epsilon": 0.05,
+      "mean_reward": 2.14375,
+      "cumulative_reward": 34.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 123,
+      "epsilon": 0.05,
+      "mean_reward": 2.125,
+      "cumulative_reward": 34.0,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 124,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 125,
+      "epsilon": 0.05,
+      "mean_reward": 2.14375,
+      "cumulative_reward": 34.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 126,
+      "epsilon": 0.05,
+      "mean_reward": 1.76875,
+      "cumulative_reward": 28.3,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 127,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 128,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 129,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 130,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 131,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 132,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 133,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 134,
+      "epsilon": 0.05,
+      "mean_reward": 1.9125,
+      "cumulative_reward": 30.6,
+      "routing_accuracy": 0.875
+    },
+    {
+      "epoch": 135,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 136,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 137,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 138,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 139,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 140,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 141,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 142,
+      "epsilon": 0.05,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 143,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 144,
+      "epsilon": 0.05,
+      "mean_reward": 2.1625,
+      "cumulative_reward": 34.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 145,
+      "epsilon": 0.05,
+      "mean_reward": 2.1625,
+      "cumulative_reward": 34.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 146,
+      "epsilon": 0.05,
+      "mean_reward": 2.1625,
+      "cumulative_reward": 34.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 147,
+      "epsilon": 0.05,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 148,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 149,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 150,
+      "epsilon": 0.05,
+      "mean_reward": 2.14375,
+      "cumulative_reward": 34.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 151,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 152,
+      "epsilon": 0.05,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 153,
+      "epsilon": 0.05,
+      "mean_reward": 2.3,
+      "cumulative_reward": 36.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 154,
+      "epsilon": 0.05,
+      "mean_reward": 2.0375,
+      "cumulative_reward": 32.6,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 155,
+      "epsilon": 0.05,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 156,
+      "epsilon": 0.05,
+      "mean_reward": 2.05,
+      "cumulative_reward": 32.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 157,
+      "epsilon": 0.05,
+      "mean_reward": 2.01875,
+      "cumulative_reward": 32.3,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 158,
+      "epsilon": 0.05,
+      "mean_reward": 2.175,
+      "cumulative_reward": 34.8,
+      "routing_accuracy": 1.0
+    },
+    {
+      "epoch": 159,
+      "epsilon": 0.05,
+      "mean_reward": 1.925,
+      "cumulative_reward": 30.8,
+      "routing_accuracy": 0.9375
+    },
+    {
+      "epoch": 160,
+      "epsilon": 0.05,
+      "mean_reward": 2.125,
+      "cumulative_reward": 34.0,
+      "routing_accuracy": 0.9375
+    }
+  ]
+}

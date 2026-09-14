@@ -1,0 +1,327 @@
+{
+  "computed_at": "2026-08-01T08:56:18.668556+00:00",
+  "seed": 42,
+  "nodes": 66,
+  "edges": 171,
+  "simple_edges": 169,
+  "density": 0.07878788,
+  "connected_components": 13,
+  "component_sizes": [
+    50,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "community_count": 16,
+  "modularity": 0.28117013,
+  "communities": [
+    {
+      "community_id": 0,
+      "size": 1,
+      "members": [
+        "AMS"
+      ]
+    },
+    {
+      "community_id": 1,
+      "size": 18,
+      "members": [
+        "AA",
+        "AMOC",
+        "Atlantic ridge",
+        "CAO",
+        "ECMWF",
+        "Europe",
+        "Greenland",
+        "NAO",
+        "NAO-",
+        "QBO",
+        "SB",
+        "SSW",
+        "Siberia",
+        "Western Europe",
+        "conditions hivernales severes aux moyennes latitudes",
+        "jet stream",
+        "polar vortex",
+        "vagues de froid les plus intenses en Europe de l'Ouest et en France"
+      ]
+    },
+    {
+      "community_id": 2,
+      "size": 1,
+      "members": [
+        "Azores high"
+      ]
+    },
+    {
+      "community_id": 3,
+      "size": 8,
+      "members": [
+        "CMIP",
+        "CMIP5",
+        "CMIP6",
+        "GCM",
+        "SSP",
+        "WCC",
+        "Z500",
+        "indice NAO quotidien classique"
+      ]
+    },
+    {
+      "community_id": 4,
+      "size": 1,
+      "members": [
+        "GKTL"
+      ]
+    },
+    {
+      "community_id": 5,
+      "size": 15,
+      "members": [
+        "AR6",
+        "EEA",
+        "Gessner et al.",
+        "IPCC",
+        "SWG",
+        "analogues",
+        "analogues de circulation",
+        "analogues of circulation",
+        "atmospheric circulation",
+        "climate change",
+        "dynamical adjustment",
+        "ensemble boosting",
+        "ensemble boosting de Gessner et al. (2021)",
+        "extreme cold events",
+        "midlatitudes"
+      ]
+    },
+    {
+      "community_id": 6,
+      "size": 1,
+      "members": [
+        "Iceland low"
+      ]
+    },
+    {
+      "community_id": 7,
+      "size": 2,
+      "members": [
+        "NAO+, NAO-, Atlantic ridge, Scandinavian Blocking",
+        "la circulation hivernale en Atlantique Nord"
+      ]
+    },
+    {
+      "community_id": 8,
+      "size": 1,
+      "members": [
+        "NOAA"
+      ]
+    },
+    {
+      "community_id": 9,
+      "size": 1,
+      "members": [
+        "TPT"
+      ]
+    },
+    {
+      "community_id": 10,
+      "size": 2,
+      "members": [
+        "Scandinavian Blocking et NAO negative",
+        "blocage sur l'Atlantique Nord (Groenland ou Scandinavie)"
+      ]
+    },
+    {
+      "community_id": 11,
+      "size": 9,
+      "members": [
+        "DJF",
+        "France",
+        "NAO negative et courant-jet scinde et deplace vers le sud",
+        "WMO",
+        "cold wave",
+        "empirical importance sampling",
+        "merged jet configuration",
+        "phase negative de la NAO",
+        "winter 1963"
+      ]
+    },
+    {
+      "community_id": 12,
+      "size": 1,
+      "members": [
+        "merged jet"
+      ]
+    },
+    {
+      "community_id": 13,
+      "size": 2,
+      "members": [
+        "nombre d'analogues K",
+        "resultats du SWG"
+      ]
+    },
+    {
+      "community_id": 14,
+      "size": 1,
+      "members": [
+        "severe winter weather"
+      ]
+    },
+    {
+      "community_id": 15,
+      "size": 2,
+      "members": [
+        "sudden stratospheric warming de janvier 1963",
+        "vortex polaire affaibli et persistance des conditions anormales en Europe"
+      ]
+    }
+  ],
+  "top_degree_centrality": [
+    {
+      "name": "Europe",
+      "value": 0.47692308
+    },
+    {
+      "name": "SWG",
+      "value": 0.33846154
+    },
+    {
+      "name": "France",
+      "value": 0.30769231
+    },
+    {
+      "name": "atmospheric circulation",
+      "value": 0.27692308
+    },
+    {
+      "name": "winter 1963",
+      "value": 0.26153846
+    },
+    {
+      "name": "CMIP6",
+      "value": 0.23076923
+    },
+    {
+      "name": "analogues",
+      "value": 0.23076923
+    },
+    {
+      "name": "Western Europe",
+      "value": 0.21538462
+    },
+    {
+      "name": "extreme cold events",
+      "value": 0.21538462
+    },
+    {
+      "name": "NAO",
+      "value": 0.2
+    }
+  ],
+  "top_betweenness_centrality": [
+    {
+      "name": "Europe",
+      "value": 0.22304753
+    },
+    {
+      "name": "winter 1963",
+      "value": 0.07610701
+    },
+    {
+      "name": "SWG",
+      "value": 0.07593782
+    },
+    {
+      "name": "climate change",
+      "value": 0.06844284
+    },
+    {
+      "name": "CMIP6",
+      "value": 0.05655597
+    },
+    {
+      "name": "France",
+      "value": 0.03731467
+    },
+    {
+      "name": "NAO",
+      "value": 0.03032069
+    },
+    {
+      "name": "atmospheric circulation",
+      "value": 0.02913925
+    },
+    {
+      "name": "WCC",
+      "value": 0.02509039
+    },
+    {
+      "name": "AA",
+      "value": 0.02395488
+    }
+  ],
+  "top_closeness_centrality": [
+    {
+      "name": "Europe",
+      "value": 0.53534002
+    },
+    {
+      "name": "SWG",
+      "value": 0.46173077
+    },
+    {
+      "name": "France",
+      "value": 0.45603039
+    },
+    {
+      "name": "atmospheric circulation",
+      "value": 0.43974359
+    },
+    {
+      "name": "analogues",
+      "value": 0.41042735
+    },
+    {
+      "name": "extreme cold events",
+      "value": 0.41042735
+    },
+    {
+      "name": "winter 1963",
+      "value": 0.41042735
+    },
+    {
+      "name": "Western Europe",
+      "value": 0.40591716
+    },
+    {
+      "name": "CMIP6",
+      "value": 0.40150502
+    },
+    {
+      "name": "NAO",
+      "value": 0.39296236
+    }
+  ],
+  "relations_by_type": {
+    "CAUSES": 1,
+    "ASSOCIATED_WITH": 7,
+    "INFLUENCES": 3,
+    "USES": 1,
+    "CO_OCCURS_WITH": 159
+  },
+  "relations_by_extraction_method": {
+    "verified_evaluation_annotation": 12,
+    "gazetteer_cooccurrence": 159
+  }
+}

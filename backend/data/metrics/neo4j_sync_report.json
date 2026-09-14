@@ -1,0 +1,212 @@
+{
+  "connection_success": true,
+  "database_name": "neo4j",
+  "nodes_inserted": 66,
+  "relationships_inserted": 171,
+  "communities_inserted": 16,
+  "constraints_created": [
+    "entity_name_unique"
+  ],
+  "verification_results": {
+    "nodes": [
+      {
+        "nodes": 66
+      }
+    ],
+    "relationships": [
+      {
+        "relationships": 171
+      }
+    ],
+    "communities": [
+      {
+        "community": 1,
+        "members": 18
+      },
+      {
+        "community": 5,
+        "members": 15
+      },
+      {
+        "community": 11,
+        "members": 9
+      },
+      {
+        "community": 3,
+        "members": 8
+      },
+      {
+        "community": 7,
+        "members": 2
+      },
+      {
+        "community": 10,
+        "members": 2
+      },
+      {
+        "community": 13,
+        "members": 2
+      },
+      {
+        "community": 15,
+        "members": 2
+      },
+      {
+        "community": 0,
+        "members": 1
+      },
+      {
+        "community": 2,
+        "members": 1
+      },
+      {
+        "community": 4,
+        "members": 1
+      },
+      {
+        "community": 6,
+        "members": 1
+      },
+      {
+        "community": 8,
+        "members": 1
+      },
+      {
+        "community": 9,
+        "members": 1
+      },
+      {
+        "community": 12,
+        "members": 1
+      },
+      {
+        "community": 14,
+        "members": 1
+      }
+    ],
+    "sample_relations": [
+      {
+        "source": "AA",
+        "type": "INFLUENCES",
+        "target": "conditions hivernales severes aux moyennes latitudes",
+        "page_pdf": 53
+      },
+      {
+        "source": "AA",
+        "type": "CO_OCCURS_WITH",
+        "target": "AMOC",
+        "page_pdf": 89
+      },
+      {
+        "source": "AA",
+        "type": "CO_OCCURS_WITH",
+        "target": "Europe",
+        "page_pdf": 26
+      },
+      {
+        "source": "AA",
+        "type": "CO_OCCURS_WITH",
+        "target": "France",
+        "page_pdf": 53
+      },
+      {
+        "source": "AA",
+        "type": "CO_OCCURS_WITH",
+        "target": "atmospheric circulation",
+        "page_pdf": 74
+      },
+      {
+        "source": "AA",
+        "type": "CO_OCCURS_WITH",
+        "target": "jet stream",
+        "page_pdf": 26
+      },
+      {
+        "source": "AMOC",
+        "type": "CO_OCCURS_WITH",
+        "target": "Europe",
+        "page_pdf": 25
+      },
+      {
+        "source": "AR6",
+        "type": "CO_OCCURS_WITH",
+        "target": "IPCC",
+        "page_pdf": 24
+      },
+      {
+        "source": "Atlantic ridge",
+        "type": "CO_OCCURS_WITH",
+        "target": "NAO",
+        "page_pdf": 21
+      },
+      {
+        "source": "Atlantic ridge",
+        "type": "CO_OCCURS_WITH",
+        "target": "NAO-",
+        "page_pdf": 21
+      },
+      {
+        "source": "CAO",
+        "type": "CO_OCCURS_WITH",
+        "target": "Europe",
+        "page_pdf": 24
+      },
+      {
+        "source": "CAO",
+        "type": "CO_OCCURS_WITH",
+        "target": "jet stream",
+        "page_pdf": 26
+      },
+      {
+        "source": "CMIP",
+        "type": "CO_OCCURS_WITH",
+        "target": "CMIP6",
+        "page_pdf": 24
+      },
+      {
+        "source": "CMIP5",
+        "type": "CO_OCCURS_WITH",
+        "target": "CMIP6",
+        "page_pdf": 24
+      },
+      {
+        "source": "CMIP6",
+        "type": "CO_OCCURS_WITH",
+        "target": "DJF",
+        "page_pdf": 73
+      },
+      {
+        "source": "CMIP6",
+        "type": "CO_OCCURS_WITH",
+        "target": "Europe",
+        "page_pdf": 88
+      },
+      {
+        "source": "CMIP6",
+        "type": "CO_OCCURS_WITH",
+        "target": "France",
+        "page_pdf": 87
+      },
+      {
+        "source": "CMIP6",
+        "type": "CO_OCCURS_WITH",
+        "target": "GCM",
+        "page_pdf": 24
+      },
+      {
+        "source": "CMIP6",
+        "type": "CO_OCCURS_WITH",
+        "target": "SSP",
+        "page_pdf": 24
+      },
+      {
+        "source": "CMIP6",
+        "type": "CO_OCCURS_WITH",
+        "target": "SWG",
+        "page_pdf": 87
+      }
+    ]
+  },
+  "sync_duration_seconds": 2.126132,
+  "synced_at": "2026-08-01T09:15:30.478746+00:00"
+}

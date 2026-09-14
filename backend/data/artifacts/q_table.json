@@ -1,0 +1,267 @@
+{
+  "computed_at": "2026-08-01T09:11:38.837247+00:00",
+  "algorithm": "Q-Learning with epsilon-greedy routing and a measured post-retrieval state",
+  "seed": 42,
+  "alpha": 0.1,
+  "gamma": 0.9,
+  "epsilon_start": 0.3,
+  "epsilon_end": 0.05,
+  "epochs": 160,
+  "actions": [
+    "use_vector",
+    "use_graph",
+    "use_hybrid",
+    "abstain"
+  ],
+  "states": [
+    "semantic|entity_0|coverage_low",
+    "semantic|entity_0|coverage_high",
+    "semantic|entity_1|coverage_low",
+    "semantic|entity_1|coverage_high",
+    "relational|entity_0|coverage_low",
+    "relational|entity_0|coverage_high",
+    "relational|entity_1|coverage_low",
+    "relational|entity_1|coverage_high",
+    "hybrid|entity_0|coverage_low",
+    "hybrid|entity_0|coverage_high",
+    "hybrid|entity_1|coverage_low",
+    "hybrid|entity_1|coverage_high",
+    "unknown|entity_0|coverage_low",
+    "unknown|entity_0|coverage_high",
+    "unknown|entity_1|coverage_low",
+    "unknown|entity_1|coverage_high"
+  ],
+  "q_values": {
+    "semantic|entity_0|coverage_low": [
+      2.35,
+      -0.26215,
+      -0.31547169,
+      -0.24569072
+    ],
+    "semantic|entity_0|coverage_high": [
+      2.35,
+      -0.23357945,
+      -0.31423729,
+      -0.25214553
+    ],
+    "semantic|entity_1|coverage_low": [
+      2.35,
+      -0.26215,
+      -0.31547169,
+      -0.24569072
+    ],
+    "semantic|entity_1|coverage_high": [
+      2.35,
+      -0.29072055,
+      -0.31670608,
+      -0.23923591
+    ],
+    "relational|entity_0|coverage_low": [
+      -0.28936521,
+      2.34999957,
+      -0.59216526,
+      -0.30594639
+    ],
+    "relational|entity_0|coverage_high": [
+      -0.38506676,
+      2.35,
+      -0.68771453,
+      -0.36969081
+    ],
+    "relational|entity_1|coverage_low": [
+      -0.28936521,
+      2.34999957,
+      -0.59216526,
+      -0.30594639
+    ],
+    "relational|entity_1|coverage_high": [
+      -0.19366366,
+      2.34999915,
+      -0.49661598,
+      -0.24220197
+    ],
+    "hybrid|entity_0|coverage_low": [
+      -0.30820156,
+      -0.40044677,
+      2.05,
+      -0.46423036
+    ],
+    "hybrid|entity_0|coverage_high": [
+      -0.30820156,
+      -0.40044677,
+      2.05,
+      -0.46423036
+    ],
+    "hybrid|entity_1|coverage_low": [
+      -0.30820156,
+      -0.40044677,
+      2.05,
+      -0.46423036
+    ],
+    "hybrid|entity_1|coverage_high": [
+      -0.30820156,
+      -0.40044677,
+      2.05,
+      -0.46423036
+    ],
+    "unknown|entity_0|coverage_low": [
+      -0.46511418,
+      -0.48152654,
+      -0.82371338,
+      1.9
+    ],
+    "unknown|entity_0|coverage_high": [
+      -0.46511418,
+      -0.48152654,
+      -0.82371338,
+      1.9
+    ],
+    "unknown|entity_1|coverage_low": [
+      -0.46511418,
+      -0.48152654,
+      -0.82371338,
+      1.9
+    ],
+    "unknown|entity_1|coverage_high": [
+      -0.46511418,
+      -0.48152654,
+      -0.82371338,
+      1.9
+    ]
+  },
+  "state_visits": {
+    "relational|entity_0|coverage_high": 480,
+    "hybrid|entity_1|coverage_high": 640,
+    "unknown|entity_0|coverage_high": 640,
+    "semantic|entity_1|coverage_high": 320,
+    "relational|entity_1|coverage_high": 160,
+    "semantic|entity_0|coverage_high": 320
+  },
+  "post_retrieval": {
+    "states": [
+      "context_found",
+      "context_weak",
+      "context_empty"
+    ],
+    "actions": [
+      "answer",
+      "abstain",
+      "escalate_hybrid"
+    ],
+    "q_values": {
+      "context_found": [
+        1.5,
+        -0.4995225,
+        -0.49919135
+      ],
+      "context_weak": [
+        -0.81469798,
+        0.04053858,
+        0.49148693
+      ],
+      "context_empty": [
+        -0.87842335,
+        1.0,
+        -0.87842335
+      ]
+    }
+  },
+  "policy": [
+    {
+      "state": "semantic|entity_0|coverage_low",
+      "action": "use_vector",
+      "q_value": 2.35,
+      "observed_during_training": false
+    },
+    {
+      "state": "semantic|entity_0|coverage_high",
+      "action": "use_vector",
+      "q_value": 2.35,
+      "observed_during_training": true
+    },
+    {
+      "state": "semantic|entity_1|coverage_low",
+      "action": "use_vector",
+      "q_value": 2.35,
+      "observed_during_training": false
+    },
+    {
+      "state": "semantic|entity_1|coverage_high",
+      "action": "use_vector",
+      "q_value": 2.35,
+      "observed_during_training": true
+    },
+    {
+      "state": "relational|entity_0|coverage_low",
+      "action": "use_graph",
+      "q_value": 2.34999957,
+      "observed_during_training": false
+    },
+    {
+      "state": "relational|entity_0|coverage_high",
+      "action": "use_graph",
+      "q_value": 2.35,
+      "observed_during_training": true
+    },
+    {
+      "state": "relational|entity_1|coverage_low",
+      "action": "use_graph",
+      "q_value": 2.34999957,
+      "observed_during_training": false
+    },
+    {
+      "state": "relational|entity_1|coverage_high",
+      "action": "use_graph",
+      "q_value": 2.34999915,
+      "observed_during_training": true
+    },
+    {
+      "state": "hybrid|entity_0|coverage_low",
+      "action": "use_hybrid",
+      "q_value": 2.05,
+      "observed_during_training": false
+    },
+    {
+      "state": "hybrid|entity_0|coverage_high",
+      "action": "use_hybrid",
+      "q_value": 2.05,
+      "observed_during_training": false
+    },
+    {
+      "state": "hybrid|entity_1|coverage_low",
+      "action": "use_hybrid",
+      "q_value": 2.05,
+      "observed_during_training": false
+    },
+    {
+      "state": "hybrid|entity_1|coverage_high",
+      "action": "use_hybrid",
+      "q_value": 2.05,
+      "observed_during_training": true
+    },
+    {
+      "state": "unknown|entity_0|coverage_low",
+      "action": "abstain",
+      "q_value": 1.9,
+      "observed_during_training": false
+    },
+    {
+      "state": "unknown|entity_0|coverage_high",
+      "action": "abstain",
+      "q_value": 1.9,
+      "observed_during_training": true
+    },
+    {
+      "state": "unknown|entity_1|coverage_low",
+      "action": "abstain",
+      "q_value": 1.9,
+      "observed_during_training": false
+    },
+    {
+      "state": "unknown|entity_1|coverage_high",
+      "action": "abstain",
+      "q_value": 1.9,
+      "observed_during_training": false
+    }
+  ]
+}

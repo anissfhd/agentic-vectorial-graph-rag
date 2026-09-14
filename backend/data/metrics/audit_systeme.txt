@@ -1,0 +1,40 @@
+﻿
+=== IDENTIFICATION ===
+Date                  : 2026-08-01 02:24:21
+Systeme               : Microsoft Windows 10 Professionnel build 19045
+Architecture          : 64 bits
+
+=== OUTILS ===
+python --version      : Python 3.14.6
+conda --version       : ABSENT
+git --version         : git version 2.55.0.windows.3
+node --version        : v24.18.0
+npm --version         : 11.16.0
+java -version         : ABSENT
+docker --version      : Docker version 29.6.2, build dfc4efb
+
+=== VERSIONS PYTHON INSTALLEES (py -0p) ===
+ -V:3.14 *        C:\Users\user\AppData\Local\Programs\Python\Python314\python.exe
+
+=== ENVIRONNEMENTS CONDA ===
+conda absent : voir correctif dans le rapport d'etape 0
+
+=== NEO4J DESKTOP ===
+Neo4j Desktop : NON DETECTE dans les emplacements usuels
+
+=== PORTS NEO4J 7474 (HTTP) ET 7687 (BOLT) ===
+Port 7474 : LIBRE
+Port 7687 : LIBRE
+
+=== MEMOIRE ET DISQUE ===
+RAM totale            : 7.8 Go
+RAM disponible        : 1.2 Go
+Disque C: libre 1077 Go / total 1862,4 Go
+
+=== ACCES INTERNET ===
+pypi.org                  : OK (HTTP 200)
+huggingface.co            : OK (HTTP 200)
+files.pythonhosted.org    : OK (HTTP 200)
+
+=== CORPUS ===
+these_vagues_froid.pdf : PRESENT (45.2 Mo)  -- attendu ~45,2 Mo

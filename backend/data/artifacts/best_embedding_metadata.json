@@ -1,0 +1,10 @@
+{
+  "computed_at": "2026-08-01T08:53:53.932207+00:00",
+  "method": "multilingual_minilm",
+  "chunking_method": "paragraph_based",
+  "dimension": 384,
+  "chunks": 680,
+  "normalized": true,
+  "matrix_file": "best_embeddings.npy",
+  "pipeline_file": "best_embedding_pipeline.joblib"
+}

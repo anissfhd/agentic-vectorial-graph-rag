@@ -81,9 +81,10 @@ Section "PORTS NEO4J 7474 (HTTP) ET 7687 (BOLT)"
 foreach ($port in 7474, 7687) {
     $conn = Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue
     if ($conn) {
-        $pid = $conn[0].OwningProcess
-        $pname = (Get-Process -Id $pid -ErrorAction SilentlyContinue).ProcessName
-        $report.Add("Port $port : OCCUPE par PID $pid ($pname)")
+        # $pid est une variable automatique en lecture seule : utiliser un autre nom.
+        $ownerPid = $conn[0].OwningProcess
+        $pname = (Get-Process -Id $ownerPid -ErrorAction SilentlyContinue).ProcessName
+        $report.Add("Port $port : OCCUPE par PID $ownerPid ($pname)")
     } else {
         $report.Add("Port $port : LIBRE")
     }

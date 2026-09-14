@@ -1,0 +1,409 @@
+{
+  "genere_le": "2026-08-01T08:02:37+00:00",
+  "etape": "1 - ingestion, extraction, nettoyage",
+  "version_pipeline": "1.1.0",
+  "source": {
+    "fichier": "these_vagues_froid.pdf",
+    "sha256": "323EFC33C26ED1E2460DD988393BAAB83D3155817AC63285791020D332BA961F",
+    "taille_octets": 47393943,
+    "pages": 206,
+    "pages_attendues": 206,
+    "pages_sans_couche_texte": [
+      5,
+      143
+    ],
+    "pages_candidates_ocr": [],
+    "ocr_necessaire": false
+  },
+  "statistiques": {
+    "pages_total": 206,
+    "pages_incluses": 132,
+    "pages_exclues": 74,
+    "pages_par_langue_total": {
+      "fr": 14,
+      "en": 178,
+      "unknown": 14
+    },
+    "pages_par_langue_incluses": {
+      "fr": 8,
+      "en": 124
+    },
+    "pages_par_extraction_mode": {
+      "excluded": 74,
+      "single_column": 71,
+      "figure_or_sparse": 41,
+      "mixed_layout": 5,
+      "double_column": 15
+    },
+    "pages_par_layout_detecte": {
+      "single_column": 106,
+      "mixed_layout": 10,
+      "figure_or_sparse": 58,
+      "double_column": 32
+    },
+    "pages_par_content_type_incluses": {
+      "abstract": 4,
+      "other": 30,
+      "definition": 1,
+      "figure_caption": 53,
+      "methodology": 15,
+      "introduction": 10,
+      "conclusion": 16,
+      "result": 2,
+      "table_caption": 1
+    },
+    "pages_par_raison_exclusion": {
+      "couverture_et_metadonnees": 5,
+      "page_quasi_vide_ou_titre_seul": 1,
+      "page_blanche": 10,
+      "remerciements": 2,
+      "table_des_matieres": 2,
+      "references_internes_article": 13,
+      "page_acronymes_traitee_separement": 2,
+      "bibliographie": 10,
+      "listes_figures_et_tableaux": 2,
+      "page_structurelle_sans_contenu_scientifique": 2,
+      "annexe_b_hors_sujet": 24,
+      "annexe_c_sans_texte_exploitable": 1
+    },
+    "caracteres_bruts_total": 556548,
+    "caracteres_nettoyes_total": 448835,
+    "caracteres_nettoyes_corpus_rag": 289941,
+    "mots_estimes_corpus_rag": 45769,
+    "pages_vides_apres_nettoyage": 27,
+    "liste_pages_vides": [
+      5,
+      11,
+      33,
+      42,
+      49,
+      65,
+      66,
+      81,
+      82,
+      85,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      121,
+      127,
+      142,
+      143,
+      146,
+      149,
+      173,
+      206
+    ],
+    "cesures_reparees": 851,
+    "cesures_conservees_avec_trait_union": 41,
+    "lignes_entete_pied_supprimees": 166,
+    "numeros_de_page_supprimes": 182,
+    "numeros_de_ligne_de_marge_supprimes": 303,
+    "temps_execution_s": 2.22,
+    "acronymes_extraits": 25
+  },
+  "controles": {
+    "A_couverture": {
+      "pages_attendues": 206,
+      "pages_presentes": 206,
+      "pages_manquantes": [],
+      "pages_dupliquees": [],
+      "pages_sans_statut": [],
+      "pages_exclues_sans_raison": [],
+      "ok": true
+    },
+    "B_double_colonne": [
+      {
+        "page_pdf": 55,
+        "layout": "double_column",
+        "blocs_colonne_gauche": 11,
+        "blocs_colonne_droite": 10,
+        "bandes": 1,
+        "basculements_ordre_retenu": 1,
+        "basculements_ordre_naif": 11,
+        "largeur_bloc_max_sur_page": 0.405,
+        "colonnes_non_melangees": true,
+        "plage_contient_du_double_colonne": true,
+        "libelle": "Chapitre 3 - article publie"
+      },
+      {
+        "page_pdf": 89,
+        "layout": "single_column",
+        "blocs_colonne_gauche": 3,
+        "blocs_colonne_droite": 0,
+        "bandes": 1,
+        "basculements_ordre_retenu": 0,
+        "basculements_ordre_naif": 0,
+        "largeur_bloc_max_sur_page": 0.876,
+        "colonnes_non_melangees": true,
+        "plage_contient_du_double_colonne": false,
+        "libelle": "Chapitre 4 - article en revision"
+      },
+      {
+        "page_pdf": 175,
+        "layout": "single_column",
+        "blocs_colonne_gauche": 6,
+        "blocs_colonne_droite": 0,
+        "bandes": 1,
+        "basculements_ordre_retenu": 0,
+        "basculements_ordre_naif": 0,
+        "largeur_bloc_max_sur_page": 0.844,
+        "colonnes_non_melangees": true,
+        "plage_contient_du_double_colonne": false,
+        "libelle": "Annexe C - supplement"
+      },
+      {
+        "page_pdf": 163,
+        "layout": "double_column",
+        "blocs_colonne_gauche": 17,
+        "blocs_colonne_droite": 15,
+        "bandes": 1,
+        "basculements_ordre_retenu": 1,
+        "basculements_ordre_naif": 24,
+        "largeur_bloc_max_sur_page": 0.401,
+        "colonnes_non_melangees": true,
+        "plage_contient_du_double_colonne": true,
+        "libelle": "Annexe B - hors sujet (temoin)"
+      }
+    ],
+    "C_nettoyage": {
+      "en_tetes_repetes_residuels": {},
+      "numeros_de_page_isoles_residuels": 0,
+      "pages_avec_numero_isole_residuel": [],
+      "etiquettes_numeriques_de_figures": 6,
+      "pages_avec_etiquettes_numeriques": [
+        39,
+        43
+      ],
+      "cesures_non_reparees_dans_la_page": 0,
+      "cesures_en_fin_de_page": 7,
+      "pages_a_cesure_de_fin_de_page": [
+        53,
+        57,
+        59,
+        69,
+        71,
+        75,
+        147
+      ],
+      "pages_conservees_vides": [],
+      "pages_dupliquees": [],
+      "ok": true
+    },
+    "D_termes_scientifiques": {
+      "occurrences": {
+        "SWG": 314,
+        "Stochastic Weather Generator": 25,
+        "NAO": 34,
+        "North Atlantic Oscillation": 6,
+        "CMIP6": 66,
+        "Scandinavian Blocking": 2,
+        "polar vortex": 10,
+        "jet stream": 11,
+        "winter 1963": 65,
+        "cold spells": 143,
+        "climate change": 48
+      },
+      "termes_absents": [],
+      "ok": true
+    },
+    "E_plages_exclues": {
+      "fuites_dans_corpus_principal": {},
+      "annexe_b_pages_dans_fichier_dedie": 24,
+      "annexe_b_presente_ailleurs": true,
+      "acronymes_extraits": 25,
+      "ok": true
+    }
+  },
+  "etape_1B": {
+    "bibliographies_articles": {
+      "plages_detectees": [
+        {
+          "start_page_pdf": 64,
+          "start_paragraph": 7,
+          "end_page_pdf": 66,
+          "chapter_number": "3",
+          "chapter_title": "Simulating extreme winters of the beginning of the 21st century in Europe with a SWG",
+          "article_title": "First-author article published in Weather and Climate Dynamics",
+          "heading": "References"
+        },
+        {
+          "start_page_pdf": 80,
+          "start_paragraph": 3,
+          "end_page_pdf": 82,
+          "chapter_number": "3",
+          "chapter_title": "Simulating extreme winters of the beginning of the 21st century in Europe with a SWG",
+          "article_title": "Co-author article published in Weather and Climate Dynamics",
+          "heading": "References"
+        },
+        {
+          "start_page_pdf": 110,
+          "start_paragraph": 0,
+          "end_page_pdf": 118,
+          "chapter_number": "4",
+          "chapter_title": "Investigating the intensity and dynamics of extreme cold spells in CMIP6",
+          "article_title": "First-author article under revision in Earth System Dynamics",
+          "heading": "References"
+        }
+      ],
+      "pages_sorties_du_corpus": 15,
+      "pages_entieres": 13,
+      "pages_partielles": 2,
+      "caracteres_retires": 68913,
+      "sortie": "backend/data/processed/article_references.jsonl"
+    },
+    "annexe_c": {
+      "pages_inspectees": 33,
+      "pages_conservees": 31,
+      "pages_exclues": 2,
+      "segments_conserves": 37,
+      "caracteres_conserves": 9635,
+      "pages_conservees_liste": [
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205
+      ],
+      "pages_exclues_detail": [
+        {
+          "page_pdf": 174,
+          "raison": "annexe_c_sans_texte_exploitable"
+        },
+        {
+          "page_pdf": 206,
+          "raison": "page_blanche"
+        }
+      ],
+      "regle": "legendes reconstituees a partir de leur marqueur (« Fig. Sxx. »), labels de panneaux et fragments graphiques ecartes, legendes de moins de 12 mots rejetees car incomprehensibles sans la figure"
+    },
+    "reparations_frontieres_pages": {
+      "total": 7,
+      "a_relire": 2,
+      "sortie": "backend/data/processed/page_boundary_repairs.json",
+      "detail": [
+        {
+          "de": 53,
+          "vers": 54,
+          "mot": "ensemble",
+          "confiance": 1.0
+        },
+        {
+          "de": 57,
+          "vers": 58,
+          "mot": "configuration",
+          "confiance": 1.0
+        },
+        {
+          "de": 59,
+          "vers": 60,
+          "mot": "winter",
+          "confiance": 1.0
+        },
+        {
+          "de": 69,
+          "vers": 70,
+          "mot": "cold-wave",
+          "confiance": 0.75
+        },
+        {
+          "de": 71,
+          "vers": 73,
+          "mot": "replacement",
+          "confiance": 0.75
+        },
+        {
+          "de": 75,
+          "vers": 76,
+          "mot": "winter",
+          "confiance": 1.0
+        },
+        {
+          "de": 147,
+          "vers": 148,
+          "mot": "computationally",
+          "confiance": 1.0
+        }
+      ]
+    }
+  },
+  "avertissements": {
+    "page_sans_texte_ni_image": 2,
+    "numero_imprime_115_sur_page_liminaire_ignore_pagination_romaine": 1,
+    "page_de_figures_seules_les_legendes_longues_sont_conservees": 44,
+    "numerotation_etrangere_2_article_insere_regle_these_38_conservee": 1,
+    "numerotation_etrangere_3_article_insere_regle_these_39_conservee": 1,
+    "numerotation_etrangere_4_article_insere_regle_these_40_conservee": 1,
+    "numerotation_etrangere_5_article_insere_regle_these_41_conservee": 1,
+    "numerotation_etrangere_6_article_insere_regle_these_42_conservee": 1,
+    "numerotation_etrangere_7_article_insere_regle_these_43_conservee": 1,
+    "numerotation_etrangere_8_article_insere_regle_these_44_conservee": 1,
+    "numerotation_etrangere_9_article_insere_regle_these_45_conservee": 1,
+    "numerotation_etrangere_10_article_insere_regle_these_46_conservee": 1,
+    "numerotation_etrangere_11_article_insere_regle_these_47_conservee": 1,
+    "numerotation_etrangere_12_article_insere_regle_these_48_conservee": 1,
+    "numerotation_etrangere_13_article_insere_regle_these_49_conservee": 1,
+    "bibliographie_article_retiree": 15,
+    "numerotation_etrangere_14_article_insere_regle_these_50_conservee": 1,
+    "numerotation_etrangere_15_article_insere_regle_these_51_conservee": 1,
+    "numerotation_etrangere_944_article_insere_regle_these_54_conservee": 1,
+    "numerotation_etrangere_945_article_insere_regle_these_55_conservee": 1,
+    "numerotation_etrangere_946_article_insere_regle_these_56_conservee": 1,
+    "numerotation_etrangere_947_article_insere_regle_these_57_conservee": 1,
+    "numerotation_etrangere_948_article_insere_regle_these_58_conservee": 1,
+    "numerotation_etrangere_949_article_insere_regle_these_59_conservee": 1,
+    "numerotation_etrangere_950_article_insere_regle_these_60_conservee": 1,
+    "numerotation_etrangere_951_article_insere_regle_these_61_conservee": 1,
+    "numerotation_etrangere_952_article_insere_regle_these_62_conservee": 1,
+    "numerotation_etrangere_953_article_insere_regle_these_63_conservee": 1,
+    "numerotation_etrangere_954_article_insere_regle_these_64_conservee": 1,
+    "numerotation_etrangere_955_article_insere_regle_these_65_conservee": 1,
+    "numerotation_etrangere_956_article_insere_regle_these_66_conservee": 1,
+    "numerotation_etrangere_957_article_insere_regle_these_67_conservee": 1,
+    "numerotation_etrangere_2_article_insere_regle_these_151_conservee": 1,
+    "numerotation_etrangere_3_article_insere_regle_these_152_conservee": 1,
+    "numerotation_etrangere_4_article_insere_regle_these_153_conservee": 1,
+    "numerotation_etrangere_5_article_insere_regle_these_154_conservee": 1,
+    "numerotation_etrangere_6_article_insere_regle_these_155_conservee": 1,
+    "numerotation_etrangere_7_article_insere_regle_these_156_conservee": 1,
+    "numerotation_etrangere_8_article_insere_regle_these_157_conservee": 1
+  },
+  "volume_reference_historique": {
+    "caracteres_utiles_attendus_ordre_de_grandeur": 389000,
+    "caracteres_utiles_mesures": 289941,
+    "ecart_relatif": -0.2547,
+    "note": "Ordre de grandeur historique, jamais utilise pour ajuster les donnees. L'ecart est documente, pas corrige."
+  }
+}

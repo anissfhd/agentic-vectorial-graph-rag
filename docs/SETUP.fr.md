@@ -1,3 +1,10 @@
+> **Note** — Ce document a été rédigé à l'étape 0 du projet, avant l'implémentation.
+> Il reste utile pour la mise en place détaillée de l'environnement et de Neo4j Aura,
+> mais la phrase « aucun algorithme n'est encore implémenté » n'est plus vraie :
+> le pipeline complet est dans `backend/app/`. Voir le README pour la marche à suivre actuelle.
+
+---
+
 # Agentic Vectorial Graph RAG with Reinforcement Learning
 
 Projet de fin d'année — 4ème année Spécialité Intelligence Artificielle.

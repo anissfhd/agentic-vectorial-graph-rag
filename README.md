@@ -99,7 +99,23 @@ Most central entities by degree centrality: `Europe` (0.477), `SWG` (0.338), `Fr
   <img src="report/assets/interface_graph.png" alt="Graph RAG tab with interactive graph, Louvain communities and structural metrics" width="900">
 </p>
 
-A real export of the graph — entities, relations, centralities, page provenance and excerpts — is committed at [`data/exports/neo4j_graph_export.csv`](data/exports/neo4j_graph_export.csv).
+The graph itself is committed — [`backend/data/artifacts/graph.json`](backend/data/artifacts/graph.json), `graph.cypher`, `graph.graphml` — along with a real Aura export at [`data/exports/neo4j_graph_export.csv`](data/exports/neo4j_graph_export.csv). Every relation carries its page, section, chunk id and source excerpt.
+
+### Retrieval methods — and a result that did not go as planned
+
+| Method | F1@5 | MAP | MRR | NDCG@5 | Latency (ms) |
+|---|---|---|---|---|---|
+| **cosine_exact** | **0.282** | **0.133** | **0.402** | **0.500** | ~0 |
+| faiss_indexflatip | 0.282 | 0.133 | 0.402 | 0.500 | ~0 |
+| hybrid_rrf | 0.183 | 0.113 | 0.280 | 0.342 | 0.35 |
+| bm25 | 0.032 | 0.042 | 0.059 | 0.063 | 1.70 |
+
+Two things worth reading carefully:
+
+- **FAISS `IndexFlatIP` matches exact cosine to six decimals.** That is the expected result for a flat index, and it is the check that proves the index is wired correctly rather than silently returning something else.
+- **RRF fusion made retrieval worse, not better.** Hybrid scores 0.183 F1@5 against 0.282 for pure vector search. BM25 is so weak on this corpus — 0.032 — that fusing it drags good vector results down the ranking. The cause is the cross-lingual gap: questions are French, the passages are English, and a lexical matcher has almost nothing to match on. Hybrid retrieval is a good default, but **not on a corpus where one of the two retrievers is near-blind**. The measurement is kept and reported rather than dropped.
+
+Raw numbers: [`backend/data/metrics/`](backend/data/metrics/).
 
 ### Q-Learning routing
 
@@ -187,16 +203,30 @@ The thesis pagination is offset by 15 pages from the PDF pagination, so **both n
 
 ```
 .
+├── run_mvp.bat                   one command: artifacts check, API, frontend, browser
+├── rebuild_artifacts.bat         regenerate everything from the PDF
 ├── backend/
-│   ├── requirements.txt          phase-1 dependencies, Windows wheels verified
-│   ├── .env.example              variable names, no secrets
+│   ├── app/
+│   │   ├── main.py               FastAPI application, 10 routes
+│   │   └── core/
+│   │       ├── ingestion/        pdf_reader · cleaner · structure · language · quality
+│   │       └── mvp/              chunking · embeddings · graph · agent · workflow
+│   │                             · neo4j_store · runtime · common
 │   ├── scripts/
-│   │   ├── audit_env.ps1         Windows system audit
-│   │   ├── setup_env.bat         conda environment creation
+│   │   ├── 01_ingest_pdf.py      206 pages to corpus_clean.jsonl
+│   │   ├── 02_build_eval_set.py  the 24-question evaluation set
+│   │   ├── fast_build_mvp.py     artifact check and rebuild
+│   │   ├── push_to_neo4j.py      graph sync to Aura
 │   │   ├── 00_env_check.py       imports + cross-lingual embedding test
-│   │   └── check_neo4j.py        read-only Neo4j diagnostic
-│   ├── tests/test_env.py
-│   └── data/{raw,processed,artifacts,metrics}/
+│   │   ├── check_neo4j.py        read-only Neo4j diagnostic
+│   │   ├── audit_env.ps1         Windows system audit
+│   │   └── setup_env.bat         conda environment creation
+│   ├── tests/                    ingestion · mvp · evaluation set · environment
+│   ├── eval/eval_set.json        24 annotated questions + review notes
+│   └── data/
+│       ├── artifacts/            faiss.index · graph.{json,cypher,graphml}
+│       │                         q_table.json · reward_history.json · pca_2d.json
+│       └── metrics/              every measured result, as produced by the pipeline
 ├── frontend/                     React + Vite, 4 tabs
 ├── data/exports/
 │   └── neo4j_graph_export.csv    real Aura export: entities, relations, provenance
@@ -210,29 +240,61 @@ The thesis pagination is offset by 15 pages from the PDF pagination, so **both n
     └── make_diagrams.py          diagram generation script
 ```
 
-**The corpus PDF is not distributed here.** It is a third-party doctoral thesis; place your own copy at `backend/data/raw/these_vagues_froid.pdf`.
+### What is deliberately **not** committed
+
+The corpus is a third-party doctoral thesis and is never redistributed — neither the PDF nor anything that would reproduce its full text:
+
+| Excluded | Why |
+|---|---|
+| `backend/data/raw/*.pdf` | The thesis itself (47 MB) |
+| `backend/data/processed/*` | Cleaned corpus and all 7 chunk sets — the complete text |
+| `backend/data/artifacts/bm25_data.json` | The full tokenised corpus (680 chunks) |
+| `documentation/specifications/` | Supervisor-provided reference PDFs |
+| `backend/data/hf_cache/` | 916 MB HuggingFace model cache |
+
+Place your own copy of the thesis at `backend/data/raw/these_vagues_froid.pdf`, then run `rebuild_artifacts.bat` to regenerate what is missing.
+
+**The FAISS index, the knowledge graph and the Q-table are committed**, so the demo runs without rebuilding anything — only BM25 needs the corpus back.
 
 ---
 
 ## Getting started
 
 ```bash
-# 1. System audit (Windows)
-powershell -ExecutionPolicy Bypass -File backend/scripts/audit_env.ps1
-
-# 2. Python environment
+# 1. Python environment
 conda create -y -n pfa-rag python=3.11
 conda activate pfa-rag
-pip install -r backend/requirements.txt
-pip freeze > backend/requirements.lock.txt
+pip install -r backend/requirements.txt      # or requirements.lock.txt for exact pins
 
-# 3. Configuration
-cp backend/.env.example backend/.env   # then fill it in
+# 2. Configuration
+cp backend/.env.example backend/.env         # then fill it in
 
-# 4. Checks — exits 0 only if cross-lingual FR to EN retrieval is validated
+# 3. Checks — exits 0 only if cross-lingual FR to EN retrieval is validated
 python backend/scripts/00_env_check.py
 python backend/scripts/check_neo4j.py
 pytest backend/tests -v
+
+# 4. Frontend
+cd frontend && npm install && cd ..
+```
+
+Then, on Windows, a single command starts everything — artifact check, FastAPI, Vite, browser:
+
+```bat
+run_mvp.bat
+```
+
+Or manually:
+
+```bash
+python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
+cd frontend && npm run dev
+```
+
+To rebuild every artifact from the thesis PDF (ingestion, 7 chunkings, 7 embeddings, FAISS, graph, Q-Learning):
+
+```bat
+rebuild_artifacts.bat
 ```
 
 | Variable | Role | Example |
@@ -253,7 +315,9 @@ Full step-by-step setup: [`docs/SETUP.fr.md`](docs/SETUP.fr.md). Full design rat
 
 ## Status and limitations
 
-This repository contains the **environment skeleton, the full scientific report, the design document and the real experimental artifacts**. The pipeline implementation (ingestion, chunking, embeddings, graph construction, Q-Learning, API, React interface) was developed and is documented with real measurements in the report, but its source is not part of this snapshot.
+**The full implementation is here** — ingestion, the seven chunkings, the seven embeddings, FAISS, the knowledge graph, Q-Learning, the FastAPI backend and the React interface, plus the tests and every artifact the numbers above come from. Roughly 6,200 lines of Python, 978 lines of tests, and a React frontend.
+
+Every figure in this README can be traced back to a committed file in `backend/data/metrics/` — none of them were typed in by hand.
 
 Known limitations, as stated in the report:
 
@@ -262,6 +326,8 @@ Known limitations, as stated in the report:
 - **Title-only chunks** can surface in the top-k (for example `paragraph_based_00045`); filtering or down-weighting them is a known improvement.
 - **No cross-encoder reranker** — it would likely improve top-k at the cost of latency.
 - The graph carries no temporal or bibliographic relations yet.
+- **RRF fusion currently hurts.** See the retrieval table above — it is kept in the codebase and reported, not hidden, but vector-only is the better route on this corpus.
+- **BM25 cannot run from a fresh clone**: its artifact holds the full corpus and is excluded for copyright reasons. Everything else runs as committed.
 
 ---
 

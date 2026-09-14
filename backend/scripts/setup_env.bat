@@ -9,7 +9,9 @@ REM ====================================================================
 
 echo.
 echo [1/5] Creation de l'environnement conda pfa-rag (Python 3.11)...
-call conda create -y -n pfa-rag python=3.11
+REM Canal conda-forge uniquement : communautaire, sans CGU a accepter
+REM (les canaux repo.anaconda.com exigent un "conda tos accept" prealable).
+call conda create -y -n pfa-rag python=3.11 -c conda-forge --override-channels
 if errorlevel 1 goto :erreur
 
 echo.

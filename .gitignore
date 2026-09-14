@@ -50,27 +50,26 @@ models/
 nltk_data/
 
 # ============================================================
-#  Corpus (47 Mo) - le PDF original reste hors du depot
+#  Corpus - oeuvre tierce, jamais redistribuee
+#  La these de Camille Cadiou reste hors du depot, ainsi que tout
+#  artefact qui en reproduirait le texte integral.
 # ============================================================
 backend/data/raw/*.pdf
 !backend/data/raw/PLACER_LE_PDF_ICI.md
 documentation/*.pdf
+documentation/specifications/
 
-# ============================================================
-#  Artefacts generes par le pipeline
-# ============================================================
+# Corpus nettoye et chunks : texte integral de la these -> exclus
 backend/data/processed/*
-backend/data/artifacts/*
 !backend/data/processed/.gitkeep
-!backend/data/artifacts/.gitkeep
 
-# Index FAISS et tableaux numpy
-*.index
-*.faiss
-*.npy
-*.npz
-*.pkl
-*.joblib
+# ============================================================
+#  Caches, environnements et sorties de build
+# ============================================================
+backend/data/hf_cache/
+frontend/dist/
+frontend/node_modules/
+.pytest_cache/
 
 # Fichiers volumineux generes
 *.jsonl
@@ -78,12 +77,27 @@ backend/data/artifacts/*
 *.log
 
 # ============================================================
-#  A CONSERVER dans le depot (preuves pour le rapport)
-#  Les metriques calculees sont legeres et doivent etre versionnees.
+#  A CONSERVER dans le depot : les preuves du rapport
+#  Metriques calculees, artefacts du pipeline et jeu d'evaluation.
+#  Tous sont legers et permettent de rejouer la demo sans le PDF.
 # ============================================================
 !backend/data/metrics/*.json
 !backend/data/metrics/*.txt
+!backend/data/metrics/*.png
+!backend/data/metrics/*.md
 !backend/eval/eval_set.json
+!backend/eval/eval_set_review.md
+!backend/data/artifacts/*.json
+!backend/data/artifacts/*.npy
+!backend/data/artifacts/*.index
+!backend/data/artifacts/*.joblib
+!backend/data/artifacts/graph.cypher
+!backend/data/artifacts/graph.graphml
+
+# ... sauf celui-ci : il contient le corpus complet tokenise.
+# Cette ligne doit rester APRES les whitelists pour l'emporter.
+# Le regenerer localement avec rebuild_artifacts.bat.
+backend/data/artifacts/bm25_data.json
 
 # ============================================================
 #  Systeme

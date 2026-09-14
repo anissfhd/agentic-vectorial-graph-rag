@@ -1,0 +1,1034 @@
+{
+  "version": "1.0.0",
+  "genere_le": "2026-08-01T08:14:43+00:00",
+  "corpus": "backend/data/processed/corpus_clean.jsonl",
+  "count": 24,
+  "questions": [
+    {
+      "question_id": "SEM_001",
+      "question": "Comment l'Organisation météorologique mondiale définit-elle une vague de froid ?",
+      "question_type": "semantic",
+      "expected_route": "use_vector",
+      "difficulty": "easy",
+      "split": "train",
+      "expected_answer": "L'Organisation météorologique mondiale (WMO) définit une vague de froid comme un événement météorologique généralement caractérisé par une chute brutale de la température de l'air près de la surface terrestre, conduisant à des valeurs extrêmement basses pouvant s'accompagner de conditions dangereuses telles que le gel et le verglas.",
+      "relevant_pages_pdf": [
+        19
+      ],
+      "relevant_pages_these": [
+        4
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "1",
+          "section_number": "1.1.2",
+          "section_title": "Definition of extreme cold events"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 19,
+          "page_these": 4,
+          "language": "en",
+          "excerpt": "In its guidelines the World Meteorological Organisation (WMO) defines a cold wave as \"a meteorological event generally characterized by a sharp drop in air temperature near the Earth's surface, leading to extremely low values that can be associated with hazardous weather, such as frost and icing\" (WMO 2023)."
+        }
+      ],
+      "expected_entities": [
+        "World Meteorological Organisation",
+        "cold wave"
+      ],
+      "expected_relation": null,
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Definition officielle citee mot pour mot dans la these."
+    },
+    {
+      "question_id": "SEM_002",
+      "question": "Qu'est-ce que l'indice WCC utilisé dans la thèse et comment est-il calculé ?",
+      "question_type": "semantic",
+      "expected_route": "use_vector",
+      "difficulty": "easy",
+      "split": "train",
+      "expected_answer": "Le WCC (Western Europe Cold Circulation index) est un indice qui caractérise le schéma de circulation atmosphérique associé aux vagues de froid en Europe de l'Ouest. Il se calcule en soustrayant la moyenne du géopotentiel Z500 entre les zones (1°W - 9°E ; 40°N - 47°N) et (24°W - 13°W ; 62°N - 66°N), zones choisies comme maximum et minimum de la structure dipolaire identifiée.",
+      "relevant_pages_pdf": [
+        96
+      ],
+      "relevant_pages_these": [
+        81
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "4",
+          "section_number": "3.4",
+          "section_title": "SWG with importance sampling on circulation"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 96,
+          "page_these": 81,
+          "language": "en",
+          "excerpt": "Therefore, to investigate the dynamics of cold spells in France, we compute a Western Europe Cold Circulation index (WCC), which characterizes this atmospheric pattern, by subtracting the mean of Z500 between (1°W - 9°E; 40°N - 47°N) and (24°W - 13°W; 62°N - 66°N)."
+        },
+        {
+          "page_pdf": 96,
+          "page_these": 81,
+          "language": "en",
+          "excerpt": "Those areas were chosen as the maximum and minimum of the dipole structure identified from the Z500 composite map of the 20 coldest cold spells in France from ERA5."
+        }
+      ],
+      "expected_entities": [
+        "WCC",
+        "Z500"
+      ],
+      "expected_relation": null,
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Definition et formule donnees dans la section methodes du chapitre 4."
+    },
+    {
+      "question_id": "SEM_003",
+      "question": "Qu'est-ce que l'ajustement dynamique (dynamical adjustment) et à quoi sert-il ?",
+      "question_type": "semantic",
+      "expected_route": "use_vector",
+      "difficulty": "medium",
+      "split": "train",
+      "expected_answer": "L'ajustement dynamique est une technique des sciences du climat qui vise à estimer l'influence de la circulation atmosphérique sur une variable climatique de surface, par exemple la température de l'air en surface. Dans la thèse, il sert à séparer la composante induite par la circulation de la composante résiduelle (thermodynamique) des tendances de température hivernale.",
+      "relevant_pages_pdf": [
+        70
+      ],
+      "relevant_pages_these": [
+        55
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "3",
+          "section_number": "2",
+          "section_title": "Methods and data"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 70,
+          "page_these": 55,
+          "language": "en",
+          "excerpt": "Dynamical adjustment is a technique in climate science, which aims to estimate the influence of atmospheric circulation on a target surface climate variable, such as surface air temperature (Wallace et al., 1995; Smoliak et al., 2015; Deser et al., 2016)."
+        },
+        {
+          "page_pdf": 70,
+          "page_these": 55,
+          "language": "en",
+          "excerpt": "1 by characterizing circulation-induced and residual (thermodynamical) trends of the domain-averaged winter temperature time series over the Germany domain."
+        }
+      ],
+      "expected_entities": [
+        "dynamical adjustment",
+        "atmospheric circulation"
+      ],
+      "expected_relation": null,
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Definition explicite en section 2.2 de l'article du chapitre 3."
+    },
+    {
+      "question_id": "SEM_004",
+      "question": "Pourquoi la thèse utilise-t-elle un générateur stochastique de temps avec échantillonnage d'importance empirique ?",
+      "question_type": "semantic",
+      "expected_route": "use_vector",
+      "difficulty": "medium",
+      "split": "test",
+      "expected_answer": "Parce qu'il s'agit d'une méthode peu coûteuse en calcul qui combine des approches à la fois statistiques et physiques. Elle repose sur une discrétisation de l'espace des phases par les analogues de circulation, et elle est particulièrement adaptée aux événements de moyenne à longue durée, c'est-à-dire durant plus d'une semaine.",
+      "relevant_pages_pdf": [
+        30
+      ],
+      "relevant_pages_these": [
+        15
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "1",
+          "section_number": null,
+          "section_title": "Research questions"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 30,
+          "page_these": 15,
+          "language": "en",
+          "excerpt": "In this thesis, I use an SWG with empirical importance sampling, which is a computationally efficient method that combines both statistical and physical approaches."
+        },
+        {
+          "page_pdf": 30,
+          "page_these": 15,
+          "language": "en",
+          "excerpt": "This method is particularly well-suited for mid- to long-term events (i.e., lasting more than a week) and thus fits well the purpose of this work."
+        }
+      ],
+      "expected_entities": [
+        "SWG",
+        "empirical importance sampling",
+        "analogues of circulation"
+      ],
+      "expected_relation": null,
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Justification methodologique donnee en section 1.2 du chapitre 1."
+    },
+    {
+      "question_id": "SEM_005",
+      "question": "Quel était l'objectif général de la thèse et pourquoi les événements de froid extrême restent-ils peu étudiés ?",
+      "question_type": "semantic",
+      "expected_route": "use_vector",
+      "difficulty": "hard",
+      "split": "train",
+      "expected_answer": "L'objectif général était d'explorer comment le changement climatique affecte les événements de froid extrême aux moyennes latitudes, et plus particulièrement en Europe. Ces événements restent peu étudiés parce que l'attention se concentre sur les vagues de chaleur extrême ; leurs impacts pourraient donc être sous-estimés, alors qu'ils affectent encore fortement la santé et les systèmes énergétiques.",
+      "relevant_pages_pdf": [
+        122
+      ],
+      "relevant_pages_these": [
+        107
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "5",
+          "section_number": "5.1",
+          "section_title": "Conclusions"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 122,
+          "page_these": 107,
+          "language": "en",
+          "excerpt": "111 5.1 Conclusions The overall objective of this thesis was to explore how climate change impacts extreme cold events in the midlatitudes, and more specifically Europe."
+        },
+        {
+          "page_pdf": 122,
+          "page_these": 107,
+          "language": "en",
+          "excerpt": "Cold extremes remain understudied because of the focus on extreme heat events and their subsequent impacts could be underestimated."
+        },
+        {
+          "page_pdf": 122,
+          "page_these": 107,
+          "language": "en",
+          "excerpt": "Light has indeed been shed on heatwaves with global warming but, despite their decrease in intensity, cold events are still causing significant impacts on health and energy systems."
+        }
+      ],
+      "expected_entities": [
+        "climate change",
+        "extreme cold events",
+        "midlatitudes"
+      ],
+      "expected_relation": null,
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Chapitre 5, section Conclusions."
+    },
+    {
+      "question_id": "SEM_006",
+      "question": "Comment la thèse justifie-t-elle la valeur retenue pour le paramètre alpha_T du générateur stochastique ?",
+      "question_type": "semantic",
+      "expected_route": "use_vector",
+      "difficulty": "hard",
+      "split": "test",
+      "expected_answer": "Avec une valeur de 0,2, seules quelques simulations atteignent des températures plus froides que l'hiver 1963. Une valeur supérieure à 0,5 permet de simuler une plus grande proportion d'événements extrêmes, mais les différences deviennent moins significatives au-delà de ce seuil. L'auteure a donc retenu la valeur 0,5 pour la suite de l'analyse.",
+      "relevant_pages_pdf": [
+        45
+      ],
+      "relevant_pages_these": [
+        30
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "2",
+          "section_number": "2.3.3",
+          "section_title": "Parameter adjustment of the SWG"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 45,
+          "page_these": 30,
+          "language": "en",
+          "excerpt": "With αT = 0.2, only a few simulations reach temperatures colder than winter 1963."
+        },
+        {
+          "page_pdf": 45,
+          "page_these": 30,
+          "language": "en",
+          "excerpt": "A value of αT exceeding 0.5 enables the simulation of a higher proportion of extreme events."
+        },
+        {
+          "page_pdf": 45,
+          "page_these": 30,
+          "language": "en",
+          "excerpt": "However, since the differences become less significant beyond this threshold, I selected αT = 0.5 for the subsequent analysis."
+        }
+      ],
+      "expected_entities": [
+        "SWG",
+        "winter 1963"
+      ],
+      "expected_relation": null,
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Test de sensibilite du parametre, chapitre 2 section 2.3.3."
+    },
+    {
+      "question_id": "REL_001",
+      "question": "Par quel trajet le blocage scandinave amène-t-il l'air froid, et quelle en est la conséquence pour la France ?",
+      "question_type": "relational",
+      "expected_route": "use_graph",
+      "difficulty": "easy",
+      "split": "train",
+      "expected_answer": "Un blocage scandinave amène l'air froid en passant par la Sibérie et le nord-est de l'Europe. Cet air reste au-dessus des surfaces continentales ; cette configuration, parfois appelée « Moscou-Paris express », provoque généralement les vagues de froid les plus intenses sur l'Europe de l'Ouest et la France.",
+      "relevant_pages_pdf": [
+        23
+      ],
+      "relevant_pages_these": [
+        8
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "1",
+          "section_number": "1.1.4",
+          "section_title": "Observed evolution of extreme cold events"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 23,
+          "page_these": 8,
+          "language": "en",
+          "excerpt": "A Scandinavian blocking brings cold air through Siberia and the North-East of Europe."
+        },
+        {
+          "page_pdf": 23,
+          "page_these": 8,
+          "language": "en",
+          "excerpt": "Therefore this configuration, sometimes referred to as Moscow-Paris express, usually causes the most intense cold spells over Western Europe and France (Fig."
+        }
+      ],
+      "expected_entities": [
+        "Scandinavian Blocking",
+        "Siberia",
+        "Western Europe",
+        "France"
+      ],
+      "expected_relation": {
+        "subject": "Scandinavian Blocking",
+        "predicate": "CAUSES",
+        "object": "vagues de froid les plus intenses en Europe de l'Ouest et en France"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Relation causale explicite, chapitre 1 section 1.1.3."
+    },
+    {
+      "question_id": "REL_002",
+      "question": "Quels sont les quatre régimes de temps qui caractérisent la météo hivernale en Atlantique Nord selon la thèse ?",
+      "question_type": "relational",
+      "expected_route": "use_graph",
+      "difficulty": "easy",
+      "split": "train",
+      "expected_answer": "Les quatre régimes sont la phase positive et la phase négative de l'Oscillation nord-atlantique (NAO+ et NAO−), qui sont opposées, la dorsale atlantique (Atlantic ridge, AR) et le blocage scandinave (Scandinavian blocking, SB).",
+      "relevant_pages_pdf": [
+        21
+      ],
+      "relevant_pages_these": [
+        6
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "1",
+          "section_number": "1.1.3",
+          "section_title": "Dynamics of cold spells in Western Europe"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 21,
+          "page_these": 6,
+          "language": "en",
+          "excerpt": "Four main regimes are usually sufficient to characterize wintertime weather: the NAO+ and NAO-, opposite phases of the NAO, the Atlantic ridge (AR) and the Scandinavian blocking (SB) (Madonna et al."
+        }
+      ],
+      "expected_entities": [
+        "NAO+",
+        "NAO-",
+        "Atlantic ridge",
+        "Scandinavian Blocking"
+      ],
+      "expected_relation": {
+        "subject": "NAO+, NAO-, Atlantic ridge, Scandinavian Blocking",
+        "predicate": "CHARACTERIZE",
+        "object": "la circulation hivernale en Atlantique Nord"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Enumeration des regimes de temps, chapitre 1 section 1.1.3."
+    },
+    {
+      "question_id": "REL_003",
+      "question": "À quelle phase de l'Oscillation nord-atlantique l'hiver 1963 est-il associé, et que traduit cet indice ?",
+      "question_type": "relational",
+      "expected_route": "use_graph",
+      "difficulty": "medium",
+      "split": "train",
+      "expected_answer": "L'hiver 1963 est associé à un indice NAO négatif. Un indice négatif traduit une différence de pression plus faible que la normale entre la dépression d'Islande et l'anticyclone des Açores.",
+      "relevant_pages_pdf": [
+        53
+      ],
+      "relevant_pages_these": [
+        38
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "3",
+          "section_number": "1",
+          "section_title": "Introduction"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 53,
+          "page_these": 38,
+          "language": "en",
+          "excerpt": "Winter 1963 was associated with a negative North Atlantic Oscillation (NAO) index, indicating a lower-than-normal pressure difference between the Iceland low- and Azores high-pressure systems (Cattiaux et al., 2010; Greatbatch et al., 2015)."
+        }
+      ],
+      "expected_entities": [
+        "winter 1963",
+        "NAO",
+        "Iceland low",
+        "Azores high"
+      ],
+      "expected_relation": {
+        "subject": "winter 1963",
+        "predicate": "ASSOCIATED_WITH",
+        "object": "phase negative de la NAO"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Chapitre 3, introduction du premier article."
+    },
+    {
+      "question_id": "REL_004",
+      "question": "Quelle configuration du courant-jet Harnik et ses coauteurs relient-ils à la phase négative de la NAO ?",
+      "question_type": "relational",
+      "expected_route": "use_graph",
+      "difficulty": "medium",
+      "split": "test",
+      "expected_answer": "Harnik et al. (2014) relient la configuration de jet fusionné (merged jet) à une phase négative de l'Oscillation nord-atlantique et à des hivers anormaux.",
+      "relevant_pages_pdf": [
+        21
+      ],
+      "relevant_pages_these": [
+        6
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "1",
+          "section_number": "1.1.3",
+          "section_title": "Dynamics of cold spells in Western Europe"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 21,
+          "page_these": 6,
+          "language": "en",
+          "excerpt": "(2014) link the merged jet configuration to a negative phase of the North Atlantic Oscillation (NAO) and anomalous winters."
+        }
+      ],
+      "expected_entities": [
+        "merged jet",
+        "NAO"
+      ],
+      "expected_relation": {
+        "subject": "merged jet configuration",
+        "predicate": "LINKED_TO",
+        "object": "phase negative de la NAO"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Relation attribuee a une reference precise, chapitre 1 section 1.1.3."
+    },
+    {
+      "question_id": "REL_005",
+      "question": "Quel effet l'amplification arctique pourrait-elle avoir sur la météo hivernale des moyennes latitudes ?",
+      "question_type": "relational",
+      "expected_route": "use_graph",
+      "difficulty": "hard",
+      "split": "train",
+      "expected_answer": "L'amplification arctique est présentée comme un mécanisme susceptible de conduire à une augmentation des conditions hivernales sévères aux moyennes latitudes. La thèse souligne toutefois que cet effet potentiel reste débattu et entouré d'incertitudes.",
+      "relevant_pages_pdf": [
+        53
+      ],
+      "relevant_pages_these": [
+        38
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "3",
+          "section_number": "1",
+          "section_title": "Introduction"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 53,
+          "page_these": 38,
+          "language": "en",
+          "excerpt": "Arctic amplification (AA) is a mechanism that may lead to an increase in severe winter weather in the midlatitudes (Cohen et al., 2014; Francis et al., 2018; Francis and Vavrus, 2012; Vavrus, 2018), but its potential effect is intertwined with other hemispheric drivers of decadal variability, and the quantification of its influence remains debated (Blackport and Screen, 2020; Cohen et al., 2020; Francis, 2017)."
+        }
+      ],
+      "expected_entities": [
+        "Arctic Amplification",
+        "midlatitudes",
+        "severe winter weather"
+      ],
+      "expected_relation": {
+        "subject": "Arctic Amplification",
+        "predicate": "MAY_INCREASE",
+        "object": "conditions hivernales severes aux moyennes latitudes"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Relation explicitement presentee comme incertaine et debattue."
+    },
+    {
+      "question_id": "REL_006",
+      "question": "Quel événement stratosphérique de janvier 1963 a pu contribuer à maintenir les conditions anormales en Europe, et par quel mécanisme ?",
+      "question_type": "relational",
+      "expected_route": "use_graph",
+      "difficulty": "hard",
+      "split": "test",
+      "expected_answer": "Un réchauffement stratosphérique soudain (SSW) s'est produit fin janvier 1963. Il s'est accompagné d'un affaiblissement du vortex polaire, ce qui a pu contribuer à maintenir la persistance des conditions anormales en Europe tout au long du mois de février.",
+      "relevant_pages_pdf": [
+        69
+      ],
+      "relevant_pages_these": [
+        54
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "3",
+          "section_number": "1",
+          "section_title": "Introduction"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 69,
+          "page_these": 54,
+          "language": "en",
+          "excerpt": "In late January 1963, a sudden stratospheric warming event took place with the associated weakened polar vortex and may have helped to maintain persistence in the anomalous conditions throughout February in Europe (Greatbatch et al., 2015)."
+        }
+      ],
+      "expected_entities": [
+        "sudden stratospheric warming",
+        "polar vortex",
+        "Europe"
+      ],
+      "expected_relation": {
+        "subject": "sudden stratospheric warming de janvier 1963",
+        "predicate": "WEAKENED_AND_MAINTAINED",
+        "object": "vortex polaire affaibli et persistance des conditions anormales en Europe"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Formulation prudente dans la these (« may have helped »)."
+    },
+    {
+      "question_id": "HYB_001",
+      "question": "Quel lien existe entre le blocage scandinave et l'intensité des vagues de froid en Europe de l'Ouest, et qu'ont en commun ce régime et la NAO négative ?",
+      "question_type": "hybrid",
+      "expected_route": "use_hybrid",
+      "difficulty": "easy",
+      "split": "train",
+      "expected_answer": "Le blocage scandinave amène l'air froid par la Sibérie et le nord-est de l'Europe ; cet air restant au-dessus des terres, cette configuration provoque les vagues de froid les plus intenses sur l'Europe de l'Ouest et la France. Ce régime et la phase négative de la NAO ont en commun un blocage sur l'Atlantique Nord, situé soit sur le Groenland, soit sur la Scandinavie.",
+      "relevant_pages_pdf": [
+        22,
+        23
+      ],
+      "relevant_pages_these": [
+        7,
+        8
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "1",
+          "section_number": "1.1.4",
+          "section_title": "Observed evolution of extreme cold events"
+        },
+        {
+          "chapter_number": "1",
+          "section_number": "1.1.3",
+          "section_title": "Dynamics of cold spells in Western Europe"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 23,
+          "page_these": 8,
+          "language": "en",
+          "excerpt": "A Scandinavian blocking brings cold air through Siberia and the North-East of Europe."
+        },
+        {
+          "page_pdf": 23,
+          "page_these": 8,
+          "language": "en",
+          "excerpt": "That air remains over land areas."
+        },
+        {
+          "page_pdf": 22,
+          "page_these": 7,
+          "language": "en",
+          "excerpt": "Both these patterns have in common a blocking over the North-Atlantic, either over Greenland or Scandinavia."
+        }
+      ],
+      "expected_entities": [
+        "Scandinavian Blocking",
+        "NAO",
+        "Western Europe",
+        "Greenland"
+      ],
+      "expected_relation": {
+        "subject": "Scandinavian Blocking et NAO negative",
+        "predicate": "SHARE_MECHANISM",
+        "object": "blocage sur l'Atlantique Nord (Groenland ou Scandinavie)"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Necessite deux pages : la relation causale (p23) et le mecanisme commun (p22)."
+    },
+    {
+      "question_id": "HYB_002",
+      "question": "Quelle relation la thèse établit-elle entre l'hiver 1963 et la NAO, et comment le courant-jet explique-t-il ces conditions ?",
+      "question_type": "hybrid",
+      "expected_route": "use_hybrid",
+      "difficulty": "easy",
+      "split": "train",
+      "expected_answer": "L'hiver 1963 est associé à un indice NAO négatif, traduisant une différence de pression plus faible que la normale entre la dépression d'Islande et l'anticyclone des Açores. Du point de vue dynamique, le courant-jet et les vents d'ouest associés ont été scindés et déplacés très au sud, la dépression étant décalée à l'est des Açores.",
+      "relevant_pages_pdf": [
+        53,
+        69
+      ],
+      "relevant_pages_these": [
+        38,
+        54
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "3",
+          "section_number": "1",
+          "section_title": "Introduction"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 53,
+          "page_these": 38,
+          "language": "en",
+          "excerpt": "Winter 1963 was associated with a negative North Atlantic Oscillation (NAO) index, indicating a lower-than-normal pressure difference between the Iceland low- and Azores high-pressure systems (Cattiaux et al., 2010; Greatbatch et al., 2015)."
+        },
+        {
+          "page_pdf": 69,
+          "page_these": 54,
+          "language": "en",
+          "excerpt": "While the NAO was not extremely negative, as the low was displaced to the east of the Azores (Cadiou and Yiou, 2024), the jet stream and associated westerlies were split and displaced far to the north and south of their usual position (O'Connor, 1963)."
+        }
+      ],
+      "expected_entities": [
+        "winter 1963",
+        "NAO",
+        "jet stream"
+      ],
+      "expected_relation": {
+        "subject": "winter 1963",
+        "predicate": "ASSOCIATED_WITH",
+        "object": "NAO negative et courant-jet scinde et deplace vers le sud"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Relation (p53) + explication dynamique dans un second article (p69)."
+    },
+    {
+      "question_id": "HYB_003",
+      "question": "À quoi la thèse utilise-t-elle l'indice WCC vis-à-vis des modèles CMIP6, et pourquoi cet indice est-il préférable à un indice NAO classique ?",
+      "question_type": "hybrid",
+      "expected_route": "use_hybrid",
+      "difficulty": "medium",
+      "split": "train",
+      "expected_answer": "L'indice WCC sert d'abord à évaluer dans quelle mesure les modèles CMIP6 reproduisent des mécanismes semblables à ceux observés sur la période historique, puis à établir un lien causal entre la circulation atmosphérique identifiée et les vagues de froid extrême en France. Il est préférable à un indice NAO quotidien classique parce qu'il est corrélé plus fortement à la température quotidienne en France en hiver (r = 0,65 contre r = 0,36 pour la NAO), étant taillé pour ce type d'événement et cette région.",
+      "relevant_pages_pdf": [
+        87,
+        96
+      ],
+      "relevant_pages_these": [
+        72,
+        81
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "4",
+          "section_number": "4.2",
+          "section_title": "First-author article under revision in Earth"
+        },
+        {
+          "chapter_number": "4",
+          "section_number": "3.4",
+          "section_title": "SWG with importance sampling on circulation"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 87,
+          "page_these": 72,
+          "language": "en",
+          "excerpt": "I used this index first to assess how well CMIP6 models reproduce similar mechanisms to those observed over the historical period, and secondly to establish a causal link between the identified atmospheric circulation and extreme cold spells in France across climates with increasing levels of warming."
+        },
+        {
+          "page_pdf": 96,
+          "page_these": 81,
+          "language": "en",
+          "excerpt": "4, the WCC is correlated to daily temperature over France during winter months (Pearson correlation coefficient r = 0.65 and p < 10-15)."
+        },
+        {
+          "page_pdf": 96,
+          "page_these": 81,
+          "language": "en",
+          "excerpt": "As this WCC index is tailored for a specific type of event (15-day cold spells) over a specific region (metropolitan France), it performs better than a classic daily North Atlantic Oscillation (NAO) index, defined as the normalized SLP difference between the Azores and Iceland (r = 0.36 and p < 10-15)."
+        }
+      ],
+      "expected_entities": [
+        "WCC",
+        "CMIP6",
+        "NAO",
+        "France"
+      ],
+      "expected_relation": {
+        "subject": "WCC",
+        "predicate": "OUTPERFORMS_FOR_COLD_SPELLS",
+        "object": "indice NAO quotidien classique"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Deux pages et deux chapitres differents : usage (p87) et performance (p96)."
+    },
+    {
+      "question_id": "HYB_004",
+      "question": "Quel est le lien entre le générateur stochastique de temps et les analogues de circulation, et quel objectif de la thèse cela sert-il ?",
+      "question_type": "hybrid",
+      "expected_route": "use_hybrid",
+      "difficulty": "medium",
+      "split": "test",
+      "expected_answer": "Le générateur stochastique de temps repose sur une discrétisation de l'espace des phases par les analogues de circulation. Ce lien sert le premier objectif de la thèse : adapter et améliorer le SWG existant, fondé sur ces analogues, pour simuler des événements de froid extrême dans une approche de type storyline.",
+      "relevant_pages_pdf": [
+        30,
+        31
+      ],
+      "relevant_pages_these": [
+        15,
+        16
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "1",
+          "section_number": null,
+          "section_title": "Research questions"
+        },
+        {
+          "chapter_number": "1",
+          "section_number": "1.3",
+          "section_title": "Research questions"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 30,
+          "page_these": 15,
+          "language": "en",
+          "excerpt": "It comprises a discretization of the phase-space by analogues of circulation."
+        },
+        {
+          "page_pdf": 31,
+          "page_these": 16,
+          "language": "en",
+          "excerpt": "Therefore, the first objective of this thesis is to adapt and improve the existing SWG based on analogues of circulation to the simulation of extreme cold events for a storyline approach."
+        }
+      ],
+      "expected_entities": [
+        "SWG",
+        "analogues of circulation",
+        "extreme cold events"
+      ],
+      "expected_relation": {
+        "subject": "SWG",
+        "predicate": "BASED_ON",
+        "object": "analogues de circulation"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Relation methodologique (p30) rattachee a l'objectif de recherche (p31)."
+    },
+    {
+      "question_id": "HYB_005",
+      "question": "Quelle relation la thèse établit-elle entre le SWG et la méthode d'ensemble boosting, et comment explique-t-elle l'écart d'intensité observé ?",
+      "question_type": "hybrid",
+      "expected_route": "use_hybrid",
+      "difficulty": "hard",
+      "split": "train",
+      "expected_answer": "La thèse compare le SWG à un autre algorithme d'événements rares, la méthode de splitting dite « ensemble boosting » de Gessner et al. (2021) ; l'approche du SWG, qui consiste à rejouer des trajectoires alternatives d'événements extrêmes préexistants, en est proche. Les deux méthodes donnent des résultats très similaires et cohérents. Les hivers simulés par le SWG sont toutefois légèrement moins intenses, parce que le SWG est contraint par ses données d'entrée.",
+      "relevant_pages_pdf": [
+        95,
+        122
+      ],
+      "relevant_pages_these": [
+        80,
+        107
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "5",
+          "section_number": "5.1",
+          "section_title": "Conclusions"
+        },
+        {
+          "chapter_number": "4",
+          "section_number": "3.2",
+          "section_title": "Protocol of SWG simulations"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 122,
+          "page_these": 107,
+          "language": "en",
+          "excerpt": "I compared the SWG results to those of another rare event algorithm: the splitting method of ensemble boosting by Gessner et al. (2021)."
+        },
+        {
+          "page_pdf": 122,
+          "page_these": 107,
+          "language": "en",
+          "excerpt": "The SWG and ensemble boosting yielded very similar and coherent results, despite the two algorithms using different approaches, thus confirming the validity of the implementation of SWG for extreme cold events."
+        },
+        {
+          "page_pdf": 122,
+          "page_these": 107,
+          "language": "en",
+          "excerpt": "The winters simulated by the SWG were slightly less intense than those with ensemble boosting, due to the SWG's constraint by input data."
+        },
+        {
+          "page_pdf": 95,
+          "page_these": 80,
+          "language": "en",
+          "excerpt": "This SWG approach of running alternative trajectories of pre-existing extreme events is similar to the \"ensemble boosting\" method of Gessner et al. (2021)."
+        }
+      ],
+      "expected_entities": [
+        "SWG",
+        "ensemble boosting",
+        "Gessner et al."
+      ],
+      "expected_relation": {
+        "subject": "SWG",
+        "predicate": "COMPARED_TO",
+        "object": "ensemble boosting de Gessner et al. (2021)"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Relation entre methodes (p122) et similarite d'approche (p95)."
+    },
+    {
+      "question_id": "HYB_006",
+      "question": "Quelle contrainte le nombre d'analogues impose-t-il aux résultats du SWG, et quelle amélioration la thèse propose-t-elle ?",
+      "question_type": "hybrid",
+      "expected_route": "use_hybrid",
+      "difficulty": "hard",
+      "split": "test",
+      "expected_answer": "Se limiter à K = 20 analogues, pour préserver la qualité des analogues, contraint les résultats du SWG. La thèse propose de calculer les analogues sur les membres d'ensembles de simulations de grande taille, tels que ceux fournis par certains modèles CMIP6 : cela permettrait d'utiliser un nombre d'analogues plus élevé à chaque pas de temps tout en maintenant une qualité d'analogues élevée.",
+      "relevant_pages_pdf": [
+        123
+      ],
+      "relevant_pages_these": [
+        108
+      ],
+      "relevant_sections": [
+        {
+          "chapter_number": "5",
+          "section_number": "5.2",
+          "section_title": "Caveats and Perspectives"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "page_pdf": 123,
+          "page_these": 108,
+          "language": "en",
+          "excerpt": "However, being limited to K = 20 analogues for the sake of analogue quality does constrain the SWG results."
+        },
+        {
+          "page_pdf": 123,
+          "page_these": 108,
+          "language": "en",
+          "excerpt": "Further studies could be improved by computing analogues over ensemble members of large ensemble simulations, as provided by some CMIP6 models."
+        },
+        {
+          "page_pdf": 123,
+          "page_these": 108,
+          "language": "en",
+          "excerpt": "This would enable running the SWG with a higher number of analogues (K) at each time step while maintaining high analogue quality."
+        }
+      ],
+      "expected_entities": [
+        "SWG",
+        "analogues",
+        "CMIP6"
+      ],
+      "expected_relation": {
+        "subject": "nombre d'analogues K",
+        "predicate": "CONSTRAINS",
+        "object": "resultats du SWG"
+      },
+      "out_of_context_origin": null,
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Limite (p123) et perspective d'amelioration (p123), chapitre 5."
+    },
+    {
+      "question_id": "OOC_001",
+      "question": "Quelles ont été les causes de la « rain bomb » australienne de 2022 ?",
+      "question_type": "out_of_context",
+      "expected_route": "abstain",
+      "difficulty": "easy",
+      "split": "train",
+      "expected_answer": "Je ne sais pas.",
+      "relevant_pages_pdf": [],
+      "relevant_pages_these": [],
+      "relevant_sections": [],
+      "supporting_evidence": [],
+      "expected_entities": [],
+      "expected_relation": null,
+      "out_of_context_origin": "annex_b",
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Sujet de l'annexe B, volontairement exclue du corpus RAG principal."
+    },
+    {
+      "question_id": "OOC_002",
+      "question": "Comment des ensembles de simulations climatiques ont-ils servi à anticiper les canicules des Jeux olympiques de Paris 2024 ?",
+      "question_type": "out_of_context",
+      "expected_route": "abstain",
+      "difficulty": "medium",
+      "split": "train",
+      "expected_answer": "Je ne sais pas.",
+      "relevant_pages_pdf": [],
+      "relevant_pages_these": [],
+      "relevant_sections": [],
+      "supporting_evidence": [],
+      "expected_entities": [],
+      "expected_relation": null,
+      "out_of_context_origin": "annex_b",
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Second article de l'annexe B, hors du perimetre de la these."
+    },
+    {
+      "question_id": "OOC_003",
+      "question": "Quelle méthode d'attribution au changement climatique a été appliquée aux précipitations extrêmes du Queensland en 2022 ?",
+      "question_type": "out_of_context",
+      "expected_route": "abstain",
+      "difficulty": "hard",
+      "split": "test",
+      "expected_answer": "Je ne sais pas.",
+      "relevant_pages_pdf": [],
+      "relevant_pages_these": [],
+      "relevant_sections": [],
+      "supporting_evidence": [],
+      "expected_entities": [],
+      "expected_relation": null,
+      "out_of_context_origin": "annex_b",
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Annexe B. Le texte existe dans annex_b_out_of_context.jsonl mais ce fichier n'appartient pas au corpus RAG : la reponse attendue reste « Je ne sais pas. »"
+    },
+    {
+      "question_id": "OOC_004",
+      "question": "Quels sont les principaux symptômes de la grippe saisonnière ?",
+      "question_type": "out_of_context",
+      "expected_route": "abstain",
+      "difficulty": "easy",
+      "split": "train",
+      "expected_answer": "Je ne sais pas.",
+      "relevant_pages_pdf": [],
+      "relevant_pages_these": [],
+      "relevant_sections": [],
+      "supporting_evidence": [],
+      "expected_entities": [],
+      "expected_relation": null,
+      "out_of_context_origin": "unrelated",
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Sujet medical, totalement etranger au corpus."
+    },
+    {
+      "question_id": "OOC_005",
+      "question": "Comment fonctionne l'algorithme de rétropropagation du gradient dans un réseau de neurones ?",
+      "question_type": "out_of_context",
+      "expected_route": "abstain",
+      "difficulty": "medium",
+      "split": "train",
+      "expected_answer": "Je ne sais pas.",
+      "relevant_pages_pdf": [],
+      "relevant_pages_these": [],
+      "relevant_sections": [],
+      "supporting_evidence": [],
+      "expected_entities": [],
+      "expected_relation": null,
+      "out_of_context_origin": "unrelated",
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Sujet d'apprentissage automatique, absent de la these."
+    },
+    {
+      "question_id": "OOC_006",
+      "question": "Quelles sont les conséquences de l'inflation sur le marché immobilier français ?",
+      "question_type": "out_of_context",
+      "expected_route": "abstain",
+      "difficulty": "hard",
+      "split": "test",
+      "expected_answer": "Je ne sais pas.",
+      "relevant_pages_pdf": [],
+      "relevant_pages_these": [],
+      "relevant_sections": [],
+      "supporting_evidence": [],
+      "expected_entities": [],
+      "expected_relation": null,
+      "out_of_context_origin": "unrelated",
+      "relevant_chunk_ids": [],
+      "annotation_status": "verified",
+      "notes": "Sujet economique, absent de la these. Piege : contient « francais », present dans le corpus, mais aucun contenu ne soutient la reponse."
+    }
+  ]
+}

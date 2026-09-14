@@ -1,0 +1,82 @@
+{
+  "genere_le": "2026-08-01T01:38:52+00:00",
+  "etape": "0 - audit environnement",
+  "python": "3.11.15",
+  "plateforme": "Windows-10-10.0.19045-SP0",
+  "seed": 42,
+  "imports": {
+    "fitz": {
+      "ok": true,
+      "version": "1.28.0",
+      "pip": "pymupdf"
+    },
+    "numpy": {
+      "ok": true,
+      "version": "2.4.6",
+      "pip": "numpy"
+    },
+    "pandas": {
+      "ok": true,
+      "version": "2.3.3",
+      "pip": "pandas"
+    },
+    "sklearn": {
+      "ok": true,
+      "version": "1.9.0",
+      "pip": "scikit-learn"
+    },
+    "torch": {
+      "ok": true,
+      "version": "2.13.0+cpu",
+      "pip": "torch"
+    },
+    "sentence_transformers": {
+      "ok": true,
+      "version": "5.6.1",
+      "pip": "sentence-transformers"
+    },
+    "faiss": {
+      "ok": true,
+      "version": "1.14.3",
+      "pip": "faiss-cpu"
+    }
+  },
+  "tous_imports_ok": true,
+  "test_embedding": {
+    "modele": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "dimension": 384,
+    "device": "cpu",
+    "temps_chargement_s": 196.787,
+    "temps_encodage_s": 0.3477,
+    "phrases": {
+      "fr_sujet": "Les vagues de froid extremes en Europe",
+      "en_sujet": "Extreme cold spells in Europe",
+      "fr_hors_sujet": "Comment fonctionne une voiture electrique ?"
+    },
+    "matrice_similarite": [
+      [
+        1.0,
+        0.8795,
+        0.071
+      ],
+      [
+        0.8795,
+        1.0,
+        0.0522
+      ],
+      [
+        0.071,
+        0.0522,
+        1.0
+      ]
+    ],
+    "similarites": {
+      "fr_sujet__en_sujet": 0.8795,
+      "fr_sujet__fr_hors_sujet": 0.071,
+      "en_sujet__fr_hors_sujet": 0.0522
+    },
+    "marge_cross_lingue": 0.8085,
+    "critere": "sim(FR,EN) > sim(FR,hors-sujet) ET sim(FR,EN) > sim(EN,hors-sujet) ET sim(FR,EN) > 0.5",
+    "reussi": true
+  }
+}

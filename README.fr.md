@@ -99,7 +99,23 @@ Entités les plus centrales (degree centrality) : `Europe` (0,477), `SWG` (0,338
   <img src="report/assets/interface_graph.png" alt="Onglet Graph RAG avec graphe interactif, communautés Louvain et métriques structurelles" width="900">
 </p>
 
-Un export réel du graphe — entités, relations, centralités, provenance des pages et extraits — est versionné dans [`data/exports/neo4j_graph_export.csv`](data/exports/neo4j_graph_export.csv).
+Le graphe lui-même est versionné — [`backend/data/artifacts/graph.json`](backend/data/artifacts/graph.json), `graph.cypher`, `graph.graphml` — ainsi qu'un export Aura réel dans [`data/exports/neo4j_graph_export.csv`](data/exports/neo4j_graph_export.csv). Chaque relation porte sa page, sa section, son identifiant de chunk et l'extrait source.
+
+### Méthodes de retrieval — et un résultat qui ne s'est pas passé comme prévu
+
+| Méthode | F1@5 | MAP | MRR | NDCG@5 | Latence (ms) |
+|---|---|---|---|---|---|
+| **cosine_exact** | **0,282** | **0,133** | **0,402** | **0,500** | ~0 |
+| faiss_indexflatip | 0,282 | 0,133 | 0,402 | 0,500 | ~0 |
+| hybrid_rrf | 0,183 | 0,113 | 0,280 | 0,342 | 0,35 |
+| bm25 | 0,032 | 0,042 | 0,059 | 0,063 | 1,70 |
+
+Deux points à lire attentivement :
+
+- **FAISS `IndexFlatIP` égale le cosinus exact à six décimales.** C'est le résultat attendu pour un index plat, et c'est le contrôle qui prouve que l'index est correctement câblé plutôt que de renvoyer silencieusement autre chose.
+- **La fusion RRF a dégradé le retrieval, pas amélioré.** L'hybride obtient 0,183 de F1@5 contre 0,282 pour le vectoriel seul. BM25 est si faible sur ce corpus — 0,032 — que le fusionner fait descendre les bons résultats vectoriels dans le classement. La cause est l'écart cross-lingue : les questions sont en français, les passages en anglais, et un matcher lexical n'a presque rien à apparier. Le retrieval hybride est un bon réglage par défaut, mais **pas sur un corpus où l'un des deux retrievers est quasi aveugle**. La mesure est conservée et rapportée plutôt qu'écartée.
+
+Chiffres bruts : [`backend/data/metrics/`](backend/data/metrics/).
 
 ### Routage par Q-Learning
 
@@ -187,16 +203,30 @@ La pagination de la thèse est décalée de 15 pages par rapport à celle du PDF
 
 ```
 .
+├── run_mvp.bat                   une commande : contrôle des artefacts, API, frontend, navigateur
+├── rebuild_artifacts.bat         régénère tout depuis le PDF
 ├── backend/
-│   ├── requirements.txt          dépendances phase 1, wheels Windows vérifiées
-│   ├── .env.example              noms des variables, aucun secret
+│   ├── app/
+│   │   ├── main.py               application FastAPI, 10 routes
+│   │   └── core/
+│   │       ├── ingestion/        pdf_reader · cleaner · structure · language · quality
+│   │       └── mvp/              chunking · embeddings · graph · agent · workflow
+│   │                             · neo4j_store · runtime · common
 │   ├── scripts/
-│   │   ├── audit_env.ps1         audit système Windows
-│   │   ├── setup_env.bat         création de l'environnement conda
+│   │   ├── 01_ingest_pdf.py      206 pages vers corpus_clean.jsonl
+│   │   ├── 02_build_eval_set.py  le jeu d'évaluation de 24 questions
+│   │   ├── fast_build_mvp.py     contrôle et reconstruction des artefacts
+│   │   ├── push_to_neo4j.py      synchronisation du graphe vers Aura
 │   │   ├── 00_env_check.py       imports + test d'embedding cross-lingue
-│   │   └── check_neo4j.py        diagnostic Neo4j sans écriture
-│   ├── tests/test_env.py
-│   └── data/{raw,processed,artifacts,metrics}/
+│   │   ├── check_neo4j.py        diagnostic Neo4j sans écriture
+│   │   ├── audit_env.ps1         audit système Windows
+│   │   └── setup_env.bat         création de l'environnement conda
+│   ├── tests/                    ingestion · mvp · jeu d'évaluation · environnement
+│   ├── eval/eval_set.json        24 questions annotées + notes de relecture
+│   └── data/
+│       ├── artifacts/            faiss.index · graph.{json,cypher,graphml}
+│       │                         q_table.json · reward_history.json · pca_2d.json
+│       └── metrics/              tous les résultats mesurés, tels que produits par le pipeline
 ├── frontend/                     React + Vite, 4 onglets
 ├── data/exports/
 │   └── neo4j_graph_export.csv    export Aura réel : entités, relations, provenance
@@ -210,29 +240,61 @@ La pagination de la thèse est décalée de 15 pages par rapport à celle du PDF
     └── make_diagrams.py          script de génération des diagrammes
 ```
 
-**Le PDF du corpus n'est pas distribué ici.** C'est une thèse de doctorat tierce ; placez votre propre copie dans `backend/data/raw/these_vagues_froid.pdf`.
+### Ce qui est délibérément **exclu** du dépôt
+
+Le corpus est une thèse de doctorat tierce et n'est jamais redistribué — ni le PDF, ni rien qui en reproduirait le texte intégral :
+
+| Exclu | Pourquoi |
+|---|---|
+| `backend/data/raw/*.pdf` | La thèse elle-même (47 Mo) |
+| `backend/data/processed/*` | Corpus nettoyé et les 7 jeux de chunks — le texte complet |
+| `backend/data/artifacts/bm25_data.json` | Le corpus intégral tokenisé (680 chunks) |
+| `documentation/specifications/` | PDF de référence fournis par l'encadrement |
+| `backend/data/hf_cache/` | 916 Mo de cache de modèles HuggingFace |
+
+Placez votre propre copie de la thèse dans `backend/data/raw/these_vagues_froid.pdf`, puis lancez `rebuild_artifacts.bat` pour régénérer ce qui manque.
+
+**L'index FAISS, le graphe de connaissances et la Q-table sont versionnés**, donc la démo tourne sans rien reconstruire — seul BM25 nécessite de récupérer le corpus.
 
 ---
 
 ## Mise en route
 
 ```bash
-# 1. Audit système (Windows)
-powershell -ExecutionPolicy Bypass -File backend/scripts/audit_env.ps1
-
-# 2. Environnement Python
+# 1. Environnement Python
 conda create -y -n pfa-rag python=3.11
 conda activate pfa-rag
-pip install -r backend/requirements.txt
-pip freeze > backend/requirements.lock.txt
+pip install -r backend/requirements.txt      # ou requirements.lock.txt pour les versions exactes
 
-# 3. Configuration
-cp backend/.env.example backend/.env   # puis le remplir
+# 2. Configuration
+cp backend/.env.example backend/.env         # puis le remplir
 
-# 4. Contrôles — ne retourne 0 que si le retrieval cross-lingue FR vers EN est validé
+# 3. Contrôles — ne retourne 0 que si le retrieval cross-lingue FR vers EN est validé
 python backend/scripts/00_env_check.py
 python backend/scripts/check_neo4j.py
 pytest backend/tests -v
+
+# 4. Frontend
+cd frontend && npm install && cd ..
+```
+
+Ensuite, sous Windows, une seule commande lance tout — contrôle des artefacts, FastAPI, Vite, navigateur :
+
+```bat
+run_mvp.bat
+```
+
+Ou manuellement :
+
+```bash
+python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
+cd frontend && npm run dev
+```
+
+Pour reconstruire tous les artefacts depuis le PDF de la thèse (ingestion, 7 chunkings, 7 embeddings, FAISS, graphe, Q-Learning) :
+
+```bat
+rebuild_artifacts.bat
 ```
 
 | Variable | Rôle | Exemple |
@@ -253,7 +315,9 @@ Mise en route détaillée : [`docs/SETUP.fr.md`](docs/SETUP.fr.md). Justificatio
 
 ## État et limites
 
-Ce dépôt contient le **squelette d'environnement, le rapport scientifique complet, le document de conception et les artefacts expérimentaux réels**. L'implémentation du pipeline (ingestion, chunking, embeddings, construction du graphe, Q-Learning, API, interface React) a été développée et est documentée avec des mesures réelles dans le rapport, mais son code source ne fait pas partie de cet instantané.
+**L'implémentation complète est ici** — ingestion, les sept chunkings, les sept embeddings, FAISS, le graphe de connaissances, le Q-Learning, le backend FastAPI et l'interface React, plus les tests et tous les artefacts dont proviennent les chiffres ci-dessus. Environ 6 200 lignes de Python, 978 lignes de tests, et un frontend React.
+
+Chaque chiffre de ce README est traçable jusqu'à un fichier versionné dans `backend/data/metrics/` — aucun n'a été saisi à la main.
 
 Limites connues, telles qu'énoncées dans le rapport :
 
@@ -262,6 +326,8 @@ Limites connues, telles qu'énoncées dans le rapport :
 - **Les chunks réduits à un titre** peuvent apparaître dans le top-k (par exemple `paragraph_based_00045`) ; les filtrer ou les sous-pondérer est une amélioration identifiée.
 - **Pas de reranker cross-encoder** — il améliorerait probablement le top-k au prix de la latence.
 - Le graphe ne porte pas encore de relations temporelles ni bibliographiques.
+- **La fusion RRF dégrade actuellement les résultats.** Voir le tableau de retrieval plus haut — elle est conservée dans le code et rapportée, pas masquée, mais le vectoriel seul est la meilleure route sur ce corpus.
+- **BM25 ne peut pas tourner depuis un clone neuf** : son artefact contient le corpus complet et est exclu pour des raisons de droit d'auteur. Tout le reste fonctionne en l'état.
 
 ---
 

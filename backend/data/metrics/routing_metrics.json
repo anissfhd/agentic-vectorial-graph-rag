@@ -1,0 +1,88 @@
+{
+  "computed_at": "2026-08-01T09:11:38.846244+00:00",
+  "split": "test",
+  "questions": 8,
+  "routing_accuracy": 1.0,
+  "type_detection_accuracy": 1.0,
+  "accuracy_by_type": {
+    "hybrid": 1.0,
+    "out_of_context": 1.0,
+    "relational": 1.0,
+    "semantic": 1.0
+  },
+  "correct_abstention_rate": 1.0,
+  "predictions": [
+    {
+      "question_id": "SEM_004",
+      "question_type": "semantic",
+      "estimated_type": "semantic",
+      "state": "semantic|entity_0|coverage_high",
+      "expected_action": "use_vector",
+      "predicted_action": "use_vector",
+      "correct": true
+    },
+    {
+      "question_id": "SEM_006",
+      "question_type": "semantic",
+      "estimated_type": "semantic",
+      "state": "semantic|entity_0|coverage_high",
+      "expected_action": "use_vector",
+      "predicted_action": "use_vector",
+      "correct": true
+    },
+    {
+      "question_id": "REL_004",
+      "question_type": "relational",
+      "estimated_type": "relational",
+      "state": "relational|entity_1|coverage_high",
+      "expected_action": "use_graph",
+      "predicted_action": "use_graph",
+      "correct": true
+    },
+    {
+      "question_id": "REL_006",
+      "question_type": "relational",
+      "estimated_type": "relational",
+      "state": "relational|entity_1|coverage_high",
+      "expected_action": "use_graph",
+      "predicted_action": "use_graph",
+      "correct": true
+    },
+    {
+      "question_id": "HYB_004",
+      "question_type": "hybrid",
+      "estimated_type": "hybrid",
+      "state": "hybrid|entity_1|coverage_high",
+      "expected_action": "use_hybrid",
+      "predicted_action": "use_hybrid",
+      "correct": true
+    },
+    {
+      "question_id": "HYB_006",
+      "question_type": "hybrid",
+      "estimated_type": "hybrid",
+      "state": "hybrid|entity_1|coverage_high",
+      "expected_action": "use_hybrid",
+      "predicted_action": "use_hybrid",
+      "correct": true
+    },
+    {
+      "question_id": "OOC_003",
+      "question_type": "out_of_context",
+      "estimated_type": "unknown",
+      "state": "unknown|entity_0|coverage_high",
+      "expected_action": "abstain",
+      "predicted_action": "abstain",
+      "correct": true
+    },
+    {
+      "question_id": "OOC_006",
+      "question_type": "out_of_context",
+      "estimated_type": "unknown",
+      "state": "unknown|entity_0|coverage_high",
+      "expected_action": "abstain",
+      "predicted_action": "abstain",
+      "correct": true
+    }
+  ]
+}

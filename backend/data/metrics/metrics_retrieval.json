@@ -1,0 +1,46 @@
+{
+  "computed_at": "2026-08-01T08:54:03.898822+00:00",
+  "methods": [
+    {
+      "method": "cosine_exact",
+      "precision_at_5": 0.188889,
+      "recall_at_5": 0.555556,
+      "f1_at_5": 0.281924,
+      "map": 0.132561,
+      "mrr": 0.402123,
+      "ndcg_at_5": 0.500223,
+      "average_latency_ms": 0.0
+    },
+    {
+      "method": "faiss_indexflatip",
+      "precision_at_5": 0.188889,
+      "recall_at_5": 0.555556,
+      "f1_at_5": 0.281924,
+      "map": 0.132561,
+      "mrr": 0.402123,
+      "ndcg_at_5": 0.500223,
+      "average_latency_ms": 0.0
+    },
+    {
+      "method": "bm25",
+      "precision_at_5": 0.022222,
+      "recall_at_5": 0.055556,
+      "f1_at_5": 0.031746,
+      "map": 0.041605,
+      "mrr": 0.059383,
+      "ndcg_at_5": 0.062829,
+      "average_latency_ms": 1.701956
+    },
+    {
+      "method": "hybrid_rrf",
+      "precision_at_5": 0.122222,
+      "recall_at_5": 0.361111,
+      "f1_at_5": 0.182631,
+      "map": 0.113009,
+      "mrr": 0.279546,
+      "ndcg_at_5": 0.341546,
+      "average_latency_ms": 0.346006
+    }
+  ],
+  "winner": "cosine_exact"
+}
