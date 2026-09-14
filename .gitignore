@@ -1,0 +1,96 @@
+# ============================================================
+#  Secrets - AUCUN identifiant ne doit jamais etre versionne
+# ============================================================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials*.json
+neo4j_credentials*
+*aura*.txt
+
+# ============================================================
+#  Environnements Python
+# ============================================================
+.venv/
+venv/
+env/
+ENV/
+conda-env/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ============================================================
+#  Frontend
+# ============================================================
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+npm-debug.log*
+yarn-error.log*
+.env.local
+.env.development.local
+.env.production.local
+
+# ============================================================
+#  Modeles telecharges et caches Hugging Face
+# ============================================================
+backend/data/hf_cache/
+hf_cache/
+.cache/
+models/
+*.safetensors
+*.bin
+*.onnx
+nltk_data/
+
+# ============================================================
+#  Corpus (47 Mo) - le PDF original reste hors du depot
+# ============================================================
+backend/data/raw/*.pdf
+!backend/data/raw/PLACER_LE_PDF_ICI.md
+documentation/*.pdf
+
+# ============================================================
+#  Artefacts generes par le pipeline
+# ============================================================
+backend/data/processed/*
+backend/data/artifacts/*
+!backend/data/processed/.gitkeep
+!backend/data/artifacts/.gitkeep
+
+# Index FAISS et tableaux numpy
+*.index
+*.faiss
+*.npy
+*.npz
+*.pkl
+*.joblib
+
+# Fichiers volumineux generes
+*.jsonl
+*.parquet
+*.log
+
+# ============================================================
+#  A CONSERVER dans le depot (preuves pour le rapport)
+#  Les metriques calculees sont legeres et doivent etre versionnees.
+# ============================================================
+!backend/data/metrics/*.json
+!backend/data/metrics/*.txt
+!backend/eval/eval_set.json
+
+# ============================================================
+#  Systeme
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp

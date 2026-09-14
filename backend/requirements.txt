@@ -1,0 +1,52 @@
+# =====================================================================
+# PFA - Agentic Vectorial Graph RAG
+# PHASE 1 UNIQUEMENT : ingestion, chunking, embeddings, FAISS.
+#
+# Disponibilite des wheels Windows 64 bits / CPython 3.11 verifiee sur
+# PyPI le 31/07/2026 : OK pour la totalite des lignes ci-dessous.
+#
+# NE PAS ajouter ici, volontairement (phases ulterieures) :
+#   spacy, networkx, neo4j, langchain, langgraph, fastapi, uvicorn,
+#   rank_bm25, gensim, cross-encoders, modeles LLM locaux.
+# =====================================================================
+
+# --- Lecture du PDF -------------------------------------------------
+# pymupdf : extraction en ordre de lecture (indispensable pour les
+#           pages en double colonne des chapitres 3 et 4)
+pymupdf>=1.24,<2.0
+# pdfplumber : verification ponctuelle de la mise en page / colonnes
+pdfplumber>=0.11.4,<0.12
+
+# --- Calcul numerique et tableaux de metriques ----------------------
+numpy>=2.0,<3.0
+pandas>=2.2,<3.0
+scipy>=1.13,<2.0
+
+# --- Metriques, TF-IDF, LSA, PCA 2D, KMeans -------------------------
+scikit-learn>=1.5,<2.0
+
+# --- Segmentation en phrases (chunking par phrases, similarite intra)
+nltk>=3.9,<4.0
+
+# --- RecursiveCharacterTextSplitter (methode de chunking n.5) -------
+# Paquet leger : ne tire que langchain-core, pas tout LangChain.
+langchain-text-splitters>=0.3,<2.0
+
+# --- Embeddings -----------------------------------------------------
+# torch : sous Windows, l'index PyPI par defaut fournit la build CPU.
+torch>=2.4,<3.0
+sentence-transformers>=3.0,<6.0
+
+# --- Vector Store ---------------------------------------------------
+faiss-cpu>=1.8,<2.0
+
+# --- Configuration et tests -----------------------------------------
+python-dotenv>=1.0,<2.0
+pytest>=8.0,<10.0
+
+# =====================================================================
+# APRES une installation reussie, GELER immediatement les versions :
+#     pip freeze > requirements.lock.txt
+# C'est la seule protection reelle contre une casse d'environnement
+# la veille de la demonstration.
+# =====================================================================
